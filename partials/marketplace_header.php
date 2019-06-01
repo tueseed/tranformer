@@ -31,7 +31,7 @@
       <!-- Image and text -->
       <nav class="shadow-sm navbar navbar-light bg-white">
         <div class="container">
-          <a class="navbar-brand font-weight-bold" style="font-size:22px;" href="#!">
+          <a class="navbar-brand font-weight-bold" style="font-size:22px;" href="?action=liff_tr">
             <img src="./assets/images/pea-logo.png" width="100" class="d-inline-block align-top" alt="">
             Tranformer Load
           </a>
