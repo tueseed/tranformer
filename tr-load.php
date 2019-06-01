@@ -36,14 +36,14 @@
   require("./partials/scripts.php");
 
   // include script control withit page
-  /*$page_script_path = "scripts/{$action}.js";
+  $page_script_path = "scripts/{$action}.js";
   if(file_exists($page_script_path))
   {
     echo "<script>";
-    include("scripts/liff_global.js");
+    //include("scripts/liff_global.js");
     include($page_script_path);
     echo "</script>";
-  }*/
+  }
   
 ?>
 <?php require("./partials/marketplace_footer.php"); ?>
