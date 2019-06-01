@@ -40,7 +40,7 @@
   if(file_exists($page_script_path))
   {
     echo "<script>";
-    //include("scripts/liff_global.js");
+    include("scripts/liff_global.js");
     include($page_script_path);
     echo "</script>";
   }

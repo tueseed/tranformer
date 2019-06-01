@@ -1,4 +1,4 @@
-window.onload = function(e) {
+/*window.onload = function(e) {
   liff.init(function(data) {
     initializeUserId(data);
     liff
@@ -17,7 +17,7 @@ window.onload = function(e) {
   document.getElementsByTagName("body")[0].append(input);
   quantity_service();
   //purchase_status();
-};
+};*/
 
 
 function initializeUserId(data) {
