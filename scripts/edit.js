@@ -127,7 +127,7 @@ function send_edit()
             
         },
     complete :function(){
-            window.location.href = '?action=edit&pea_no=' + pea_no;
+            window.location.href = '?action=tr_detail&pea_no=' + pea_no;
             }	
         }); 
 
