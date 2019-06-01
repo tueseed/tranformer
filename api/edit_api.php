@@ -26,6 +26,7 @@
                     SET 
                     kva='$kva',
                     phase ='$phase',
+                    location = '$location',
                     current_a_l ='$current_a_left',
                     current_b_l ='$current_b_left',
                     current_c_l ='$current_c_left',

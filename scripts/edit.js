@@ -117,16 +117,17 @@ function send_edit()
         success: function(response)
         {
             console.log('success' + response);
+            $.unblockUI();
+            Swal.fire({
+                title: 'สำเร็จ!',
+                html: 'แก้ไขข้อมูลเรียบร้อย...<br/> ',
+                type: 'success',
+                timer: 5000
+            });
             
         },
     complete :function(){
-        $.unblockUI();
-        Swal.fire({
-            title: 'สำเร็จ!',
-            html: 'แก้ไขข้อมูลเรียบร้อย...<br/> ',
-            type: 'success',
-            timer: 5000
-        });
+            window.location.href = '?action=edit&pea_no=' + pea_no;
             }	
         }); 
 
