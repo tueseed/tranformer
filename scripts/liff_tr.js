@@ -50,8 +50,20 @@ function fetch_tr(obj)
         i++;
     }
     $('#card-area').html(html_card);
-    $('#txt_result').html('ผลการค้นหา ' + obj.length + ' รายการ');
-    $('#txt_result').show();
+    if(obj.length == 0)
+    {
+        $('#text_result_not_found').html("ไม่พบ Pea. <span class='font-weight-bold'><u>" + $('#txt_search').val() + " </u></span>ในระบบ ต้องการเพิ่มข้อมูลหรือไม่");
+        $('#text_result_not_found_alert').attr('style','display:block;');
+        $('#txt_result').hide();
+        $('#add_tr').attr('href','?action=add_tr&pea_no='+ $('#txt_search').val());
+    }
+    else if(obj.length > 0)
+    {
+        $('#txt_result').html('ผลการค้นหา ' + obj.length + ' รายการ');
+        $('#text_result_not_found_alert').attr('style','display:none;');
+        $('#txt_result').show();
+    }
+    
     console.log(obj.length);
 
 }
