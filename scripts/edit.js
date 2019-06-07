@@ -5,7 +5,7 @@ function tr_edit_detail()
     var formData = new FormData();
     formData.append('pea_no',pea_no);
     $.ajax({
-        url: './api/detail_api.php',
+        url: './api/detail_api_2.php',
         method: 'POST',
         data: formData,
         async: true,
@@ -41,29 +41,51 @@ function tr_edit_detail()
 
 function fetch_edit_detail(obj)
 {
-    $('#pea_no').html(obj[0].pea);
+    $('#pea_no').html(obj[0].pea_no);
     $('#kva').val(obj[0].kva);
 
     $('#Phase').val(obj[0].phase);
     $('#location').html(obj[0].location);
 
-    $('#current_a_left').val(obj[0].current_a_l);
-    $('#current_b_left').val(obj[0].current_b_l);
-    $('#current_c_left').val(obj[0].current_c_l);
+    $('#c1a').val(obj[0].c1a);
+    $('#c1b').val(obj[0].c1b);
+    $('#c1c').val(obj[0].c1c);
 
-    $('#current_a_right').val(obj[0].current_a_r);
-    $('#current_b_right').val(obj[0].current_b_r);
-    $('#current_c_right').val(obj[0].current_c_r);
+    $('#c2a').val(obj[0].c2a);
+    $('#c2b').val(obj[0].c2b);
+    $('#c2c').val(obj[0].c2c);
+    if((obj[0].c2a == 0 || obj[0].c2a == null ) && (obj[0].c2b == 0 || obj[0].c2b == null) && (obj[0].c2c == 0 || obj[0].c2c == null) ){$('[name=amp_param_2]').val('--')}
+    
+    $('#c3a').val(obj[0].c3a);
+    $('#c3b').val(obj[0].c3b);
+    $('#c3c').val(obj[0].c3c);
+    if((obj[0].c3a == 0 || obj[0].c3a == null ) && (obj[0].c3b == 0 || obj[0].c3b == null) && (obj[0].c3c == 0 || obj[0].c3c == null) ){$('[name=amp_param_3]').val('--')}
 
-    $('#voltage_a_left').val(obj[0].voltage_an_l);
-    $('#voltage_b_left').val(obj[0].voltage_bn_l);
-    $('#voltage_c_left').val(obj[0].voltage_cn_l);
+    $('#c4a').val(obj[0].c4a);
+    $('#c4b').val(obj[0].c4b);
+    $('#c4c').val(obj[0].c4c);
+    if((obj[0].c4a == 0 || obj[0].c4a == null ) && (obj[0].c4b == 0 || obj[0].c4b == null) && (obj[0].c4c == 0 || obj[0].c4c == null) ){$('[name=amp_param_4]').val('--')}
 
-    $('#voltage_a_right').val(obj[0].voltage_an_r);
-    $('#voltage_b_right').val(obj[0].voltage_bn_r);
-    $('#voltage_c_right').val(obj[0].voltage_cn_r);
+    $('#v1a').val(obj[0].v1a);
+    $('#v1b').val(obj[0].v1b);
+    $('#v1c').val(obj[0].v1c);
 
+    $('#v2a').val(obj[0].v2a);
+    $('#v2b').val(obj[0].v2b);
+    $('#v2c').val(obj[0].v2c);
+    if((obj[0].v2a == 0 || obj[0].v2a == null ) && (obj[0].v2b == 0 || obj[0].v2b == null) && (obj[0].v2c == 0 || obj[0].v2c == null) ){$('[name=volt_param_2]').val('--')} 
 
+    $('#v3a').val(obj[0].v3a);
+    $('#v3b').val(obj[0].v3b);
+    $('#v3c').val(obj[0].v3c);
+    if((obj[0].v3a == 0 || obj[0].v3a == null ) && (obj[0].v3b == 0 || obj[0].v3b == null) && (obj[0].v3c == 0 || obj[0].v3c == null) ){$('[name=volt_param_3]').val('--')} 
+
+    $('#v4a').val(obj[0].v4a);
+    $('#v4b').val(obj[0].v4b);
+    $('#v4c').val(obj[0].v4c);
+    if((obj[0].v4a == 0 || obj[0].v4a == null ) && (obj[0].v4b == 0 || obj[0].v4b == null) && (obj[0].v4c == 0 || obj[0].v4c == null) ){$('[name=volt_param_4]').val('--')}
+
+    $('#tr_id').val(obj[0].id);
 }
 
 function send_edit()
@@ -75,21 +97,42 @@ function send_edit()
     formData.append('Phase',$('#Phase').val());
     formData.append('location',$('#location').val());
 
-    formData.append('current_a_left',$('#current_a_left').val());
-    formData.append('current_b_left',$('#current_b_left').val());
-    formData.append('current_c_left',$('#current_c_left').val());
+    formData.append('c1a',$('#c1a').val());
+    formData.append('c1b',$('#c1b').val());
+    formData.append('c1c',$('#c1c').val());
 
-    formData.append('current_a_right',$('#current_a_right').val());
-    formData.append('current_b_right',$('#current_b_right').val());
-    formData.append('current_c_right',$('#current_c_right').val());
+    formData.append('c2a',$('#c2a').val());
+    formData.append('c2b',$('#c2b').val());
+    formData.append('c2c',$('#c2c').val());
+
+    formData.append('c3a',$('#c3a').val());
+    formData.append('c3b',$('#c3b').val());
+    formData.append('c3c',$('#c3c').val());
+
+    formData.append('c4a',$('#c4a').val());
+    formData.append('c4b',$('#c4b').val());
+    formData.append('c4c',$('#c4c').val());
+
+    formData.append('v1a',$('#v1a').val());
+    formData.append('v1b',$('#v1b').val());
+    formData.append('v1c',$('#v1c').val());
+
+    formData.append('v2a',$('#v2a').val());
+    formData.append('v2b',$('#v2b').val());
+    formData.append('v2c',$('#v2c').val());
+
+    formData.append('v3a',$('#v3a').val());
+    formData.append('v3b',$('#v3b').val());
+    formData.append('v3c',$('#v3c').val());
+
+    formData.append('v4a',$('#v4a').val());
+    formData.append('v4b',$('#v4b').val());
+    formData.append('v4c',$('#v4c').val());
+
+    formData.append('tr_id',$('#tr_id').val());
+
+
     
-    formData.append('voltage_a_left',$('#voltage_a_left').val());
-    formData.append('voltage_b_left',$('#voltage_b_left').val());
-    formData.append('voltage_c_left',$('#voltage_c_left').val());
-
-    formData.append('voltage_a_right',$('#voltage_a_right').val());
-    formData.append('voltage_b_right',$('#voltage_b_right').val());
-    formData.append('voltage_c_right',$('#voltage_c_right').val());
     $.ajax({
         url: './api/edit_api.php',
         method: 'POST',
@@ -101,7 +144,7 @@ function send_edit()
         beforeSend : function()
         {
             //$.blockUI({message : '<h1>กำลังเข้าสู่ระบบ</h1>'});
-            console.log("beforesend.....");
+            console.log("beforesend....." + formData);
             $.blockUI({
                 message: '<div class="spinner-grow text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',
                 overlayCSS : { 

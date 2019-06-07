@@ -3,7 +3,7 @@
         <div class="text-center">
             <label class="font-weight-bold text-primary bg-light py-2 px-5 shadow-sm" style="font-size:22px;border-radius: 20px;">
                 <i class="fas fa-bolt"></i>
-                แก้ข้อมูลหม้อแปลง
+                แก้ไขข้อมูล
             </label>
         </div>
         <p style="font-size:20px;">
@@ -29,6 +29,7 @@
             <label for="location" class="font-weight-bold">สถานที่:</label>
             <textarea  type="text" class="form-control" id="location" rows="3"></textarea>
         </div>
+        <input type="hidden" id="tr_id">
         <!-- <div class="text-center">
         <a class="btn btn-outline-secondary mx-1 prev" href="javascript:void(0)" title="Previous">
             <i class="fas fa-lg fa-chevron-left"></i>
@@ -44,33 +45,95 @@
                 <div class="carousel-item active">
                     <div class="form-group">
                         <label for="current_left" class="font-weight-bold">กระแส(1):</label>
-                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
-                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
-                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส A</span>
+                            </div>
+                            <input type="number" class="form-control" id="c1a" placeholder="เฟส A">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส B</span>
+                            </div>
+                            <input type="number" class="form-control" id="c1b" placeholder="เฟส B">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส C</span>
+                            </div>
+                            <input type="number" class="form-control" id="c1c" placeholder="เฟส C">
+                        </div>
+                        
+        
                     </div>  
                 </div>
                 <div class="carousel-item">
                     <div class="form-group">
                         <label for="current_left" class="font-weight-bold">กระแส(2):</label>
-                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
-                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
-                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส A</span>
+                            </div>
+                            <input type="number" class="form-control" id="c2a" name="amp_param_2" placeholder="เฟส A">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส B</span>
+                            </div>
+                            <input type="number" class="form-control" id="c2b" name="amp_param_2" placeholder="เฟส B">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส C</span>
+                            </div>
+                            <input type="number" class="form-control" id="c2c" name="amp_param_2" placeholder="เฟส C">
+                        </div>
                     </div> 
                 </div>
                 <div class="carousel-item">
                     <div class="form-group">
                         <label for="current_left" class="font-weight-bold">กระแส(3):</label>
-                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
-                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
-                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส A</span>
+                            </div>
+                            <input type="number" class="form-control" id="c3a" name="amp_param_3" placeholder="เฟส A">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส B</span>
+                            </div>
+                            <input type="number" class="form-control" id="c3b" name="amp_param_3" placeholder="เฟส B">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส C</span>
+                            </div>
+                            <input type="number" class="form-control" id="c3c" name="amp_param_3" placeholder="เฟส C">
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="form-group">
                         <label for="current_left" class="font-weight-bold">กระแส(4):</label>
-                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
-                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
-                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส A</span>
+                            </div>
+                            <input type="number" class="form-control" id="c4a" name="amp_param_4" placeholder="เฟส A">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส B</span>
+                            </div>
+                            <input type="number" class="form-control" id="c4b" name="amp_param_4" placeholder="เฟส B">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส C</span>
+                            </div>
+                            <input type="number" class="form-control" id="c4c" name="amp_param_4" placeholder="เฟส C">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,33 +151,93 @@
                 <div class="carousel-item active">
                     <div class="form-group">
                         <label for="current_left" class="font-weight-bold">แรงดัน(1):</label>
-                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
-                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
-                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส A</span>
+                            </div>
+                            <input type="number" class="form-control" id="v1a" placeholder="เฟส A">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส B</span>
+                            </div>
+                            <input type="number" class="form-control" id="v1b" placeholder="เฟส B">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส C</span>
+                            </div>
+                            <input type="number" class="form-control" id="v1c" placeholder="เฟส C">
+                        </div>
                     </div>  
                 </div>
                 <div class="carousel-item">
                     <div class="form-group">
                         <label for="current_left" class="font-weight-bold">แรงดัน(2):</label>
-                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
-                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
-                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส A</span>
+                            </div>
+                            <input type="number" class="form-control" id="v2a" name="volt_param_2" placeholder="เฟส A">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส B</span>
+                            </div>
+                            <input type="number" class="form-control" id="v2b" name="volt_param_2" placeholder="เฟส B">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส C</span>
+                            </div>
+                            <input type="number" class="form-control" id="v2c" name="volt_param_2" placeholder="เฟส C">
+                        </div>
                     </div> 
                 </div>
                 <div class="carousel-item">
                     <div class="form-group">
                         <label for="current_left" class="font-weight-bold">แรงดัน(3):</label>
-                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
-                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
-                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส A</span>
+                            </div>
+                            <input type="number" class="form-control" id="v3a" name="volt_param_3" placeholder="เฟส A">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส B</span>
+                            </div>
+                            <input type="number" class="form-control" id="v3b" name="volt_param_3" placeholder="เฟส B">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส C</span>
+                            </div>
+                            <input type="number" class="form-control" id="v3c" name="volt_param_3" placeholder="เฟส C">
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="form-group">
                         <label for="current_left" class="font-weight-bold">แรงดัน(4):</label>
-                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
-                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
-                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส A</span>
+                            </div>
+                            <input type="number" class="form-control" id="v4a" name="volt_param_4" placeholder="เฟส A">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส B</span>
+                            </div>
+                            <input type="number" class="form-control" id="v4b" name="volt_param_4" placeholder="เฟส B">
+                        </div>
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">เฟส C</span>
+                            </div>
+                            <input type="number" class="form-control" id="v4c"  name="volt_param_4" placeholder="เฟส C">
+                        </div>
                     </div>
                 </div>
             </div>

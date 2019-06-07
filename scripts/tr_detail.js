@@ -125,17 +125,17 @@ function fetch_detail2(obj)
         $('#v2a').html(obj[0].v2a);
         $('#v2b').html(obj[0].v2b);
         $('#v2c').html(obj[0].v2c);
-        if(obj[0].v2a == null && obj[0].v2b == null && obj[0].v2c == null ){$('[name=volt_param_2]').html('--')}
+        if((obj[0].v2a == 0 || obj[0].v2a == null ) && (obj[0].v2b == 0 || obj[0].v2b == null) && (obj[0].v2c == 0 || obj[0].v2c == null) ){$('[name=volt_param_2]').html('--')}
 
         $('#v3a').html(obj[0].v3a);
         $('#v3b').html(obj[0].v3b);
         $('#v3c').html(obj[0].v3c);
-        if(obj[0].v3a == null && obj[0].v3b == null && obj[0].v3c == null ){$('[name=volt_param_3]').html('--')}
+        if((obj[0].v3a == 0 || obj[0].v3a == null ) && (obj[0].v3b == 0 || obj[0].v3b == null) && (obj[0].v3c == 0 || obj[0].v3c == null) ){$('[name=volt_param_3]').html('--')}
 
         $('#v4a').html(obj[0].v4a);
         $('#v4b').html(obj[0].v4b);
         $('#v4c').html(obj[0].v4c);
-        if(obj[0].v4a == null && obj[0].v4b == null && obj[0].v4c == null ){$('[name=volt_param_4]').html('--')}
+        if((obj[0].v4a == 0 || obj[0].v4a == null ) && (obj[0].v4b == 0 || obj[0].v4b == null) && (obj[0].v4c == 0 || obj[0].v4c == null) ){$('[name=volt_param_4]').html('--')}
         $('#edit_btn').attr('href','?action=edit&pea_no='+ obj[0 ].pea_no)
 
 
