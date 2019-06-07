@@ -29,22 +29,119 @@
             <label for="location" class="font-weight-bold">สถานที่:</label>
             <textarea  type="text" class="form-control" id="location" rows="3"></textarea>
         </div>
-
-        <div class="form-group">
-            <label for="current_left" class="font-weight-bold">กระแส(ซ้าย):</label>
+        <!-- <div class="text-center">
+        <a class="btn btn-outline-secondary mx-1 prev" href="javascript:void(0)" title="Previous">
+            <i class="fas fa-lg fa-chevron-left"></i>
+        </a>
+        <span id="current_txt">กระแส</span>
+        <a class="btn btn-outline-secondary mx-1 next" href="javascript:void(0)" title="Next">
+            <i class="fas fa-lg fa-chevron-right"></i>
+        </a>
+        </div> -->
+        <p>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="form-group">
+                        <label for="current_left" class="font-weight-bold">กระแส(1):</label>
+                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
+                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
+                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                    </div>  
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="current_left" class="font-weight-bold">กระแส(2):</label>
+                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
+                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
+                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                    </div> 
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="current_left" class="font-weight-bold">กระแส(3):</label>
+                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
+                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
+                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="current_left" class="font-weight-bold">กระแส(4):</label>
+                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
+                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
+                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev"  data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next"  data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+        </p>
+        <p>
+        <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="form-group">
+                        <label for="current_left" class="font-weight-bold">แรงดัน(1):</label>
+                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
+                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
+                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                    </div>  
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="current_left" class="font-weight-bold">แรงดัน(2):</label>
+                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
+                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
+                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                    </div> 
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="current_left" class="font-weight-bold">แรงดัน(3):</label>
+                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
+                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
+                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="form-group">
+                        <label for="current_left" class="font-weight-bold">แรงดัน(4):</label>
+                        <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
+                        <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
+                        <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev"  data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next"  data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+        </p>
+        <!-- <div class="form-group">
+            <label for="current_left" class="font-weight-bold">กระแส(1):</label>
             <input type="number" class="form-control mt-1" id="current_a_left" placeholder="เฟส A">
             <input type="number" class="form-control mt-1" id="current_b_left" placeholder="เฟส B">
             <input type="number" class="form-control mt-1" id="current_c_left" placeholder="เฟส C">
         </div>
-
+           
         <div class="form-group">
-            <label for="current_right" class="font-weight-bold">กระแส(ขวา):</label>
+            <label for="current_right" class="font-weight-bold">กระแส(2):</label>
             <input type="number" class="form-control mt-1" id="current_a_right" placeholder="เฟส A">
             <input type="number" class="form-control mt-1" id="current_b_right" placeholder="เฟส B">
             <input type="number" class="form-control mt-1" id="current_c_right" placeholder="เฟส C">
-        </div>
+        </div> -->
+        
 
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="current_left" class="font-weight-bold">แรงดัน(ซ้าย):</label>
             <input type="number" class="form-control mt-1" id="voltage_a_left" placeholder="เฟส A">
             <input type="number" class="form-control mt-1" id="voltage_b_left" placeholder="เฟส B">
@@ -56,7 +153,7 @@
             <input type="number" class="form-control mt-1" id="voltage_a_right" placeholder="เฟส A">
             <input type="number" class="form-control mt-1" id="voltage_b_right" placeholder="เฟส B">
             <input type="number" class="form-control mt-1" id="voltage_c_right" placeholder="เฟส C">
-        </div>
+        </div> -->
 
         <button type="button" class="btn btn-primary btn-block mt-3" onclick="send_edit()"><i class="fas fa-save" aria-hidden="true"></i>    บันทึก</button>
     </div>
