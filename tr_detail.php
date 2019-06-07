@@ -27,9 +27,27 @@
 
         <p style="font-size:20px;">
             <span class='font-weight-bold text-success'>
-                Max Amp :
+                Rate Current :
             </span> 
             <span class="pl-1" id="rate_amp">
+                --------
+            </span>
+        </p>
+
+        <p style="font-size:20px;">
+            <span class='font-weight-bold text-success'>
+                Avg Current :
+            </span> 
+            <span class="pl-1" id="avg_amp">
+                --------
+            </span>
+        </p>
+
+        <p style="font-size:20px;">
+            <span class='font-weight-bold text-success'>
+                %Unbalance :
+            </span> 
+            <span class="pl-1" id="unbalance">
                 --------
             </span>
         </p>
@@ -41,7 +59,7 @@
             <span class='pl-1' id="location">
                 ------
             </span>
-            <i class="fas fa-location-arrow text-primary" aria-hidden="true"></i>
+            <span class='pl-1'><a href="" id="map"><i class="fas fa-location-arrow text-primary" aria-hidden="true"></i></a></span>
         </p>
 
         <div class="text-center">
@@ -74,18 +92,32 @@
             </thead>
             <tbody>
             <tr>
-                <th>ซ้าย</th>
-                <td id="a_l">--</td>
-                <td id="b_l">--</td>
-                <td id="c_l">--<i class="fas fa-exclamation-triangle text-warning" aria-hidden="true"></i></td>
-                <td id="t_c_l">--</td>
+                <th>1</th>
+                <td id="c1a">--</td>
+                <td id="c1b">--</td>
+                <td id="c1c">--<i class="fas fa-exclamation-triangle text-warning" aria-hidden="true"></i></td>
+                <td id="t_1">--</td>
             </tr>
             <tr>
-                <th>ขวา</th>
-                <td id="a_r">--</td>
-                <td id="b_r">--</td>
-                <td id="c_r">--</td>
-                <td id="t_c_r">--</td>
+                <th>2</th>
+                <td id="c2a" name="amp_param_2">--</td>
+                <td id="c2b" name="amp_param_2">--</td>
+                <td id="c2c" name="amp_param_2">--</td>
+                <td id="t_2" name="amp_param_2">--</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td id="c3a" name="amp_param_3">--</td>
+                <td id="c3b" name="amp_param_3">--</td>
+                <td id="c3c" name="amp_param_3">--</td>
+                <td id="t_3" name="amp_param_3">--</td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td id="c4a" name="amp_param_4">--</td>
+                <td id="c4b" name="amp_param_4">--</td>
+                <td id="c4c" name="amp_param_4">--</td>
+                <td id="t_4" name="amp_param_4">--</td>
             </tr>
             <tr>
                 <th>รวม</th>
@@ -115,20 +147,34 @@
             </thead>
             <tbody>
             <tr>
-                <td>ซ้าย</td>
-                <td id="v_an_l">--</td>
-                <td id="v_bn_l">--</td>
-                <td id="v_cn_l">--</td>
+                <td>1</td>
+                <td id="v1a">--</td>
+                <td id="v1b">--</td>
+                <td id="v1c">--</td>
             </tr>
             <tr>
-                <td>ขวา</td>
-                <td id="v_an_r">--</td>
-                <td id="v_bn_r">--</td>
-                <td id="v_cn_r">--</td>
+                <td>2</td>
+                <td id="v2a" name="volt_param_2">--</td>
+                <td id="v2b" name="volt_param_2">--</td>
+                <td id="v2c" name="volt_param_2">--</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td id="v3a" name="volt_param_3">--</td>
+                <td id="v3b" name="volt_param_3">--</td>
+                <td id="v3c" name="volt_param_3">--</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td id="v4a" name="volt_param_4">--</td>
+                <td id="v4b" name="volt_param_4">--</td>
+                <td id="v4c" name="volt_param_4">--</td>
             </tr>
             </tbody>
         </table>
-
-        <a href="#" class="btn btn-primary btn-block mt-3" id="edit_btn"><i class="fas fa-pencil-square-o" aria-hidden="true"></i>    แก้ไข</a>
+        <div class="text-center">
+            <a href="#" class="btn btn-primary  mt-3" id="edit_btn"><i class="fas fa-pencil-square-o" aria-hidden="true"></i>    แก้ไข</a>
+            <a href="#" class="btn btn-primary mt-3" id="add_btn"><i class="fas fa-plus-square"></i>   เพิ่มข้อมูลวัดโหลด</a>
+        </div>
     </div>
 </div>

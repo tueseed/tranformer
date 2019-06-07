@@ -19,10 +19,10 @@
 
 <div class="alert alert-primary" role="alert" id="text_result_not_found_alert" style="display:none;">
     <p style="text-indent:20px;" id="text_result_not_found">
-        ไม่พบ Pea.------ ในระบบ ต้องการเพิ่มข้อมูลหรือไม่
+        ไม่พบ Pea.------ ในระบบ 
     </p>
     <p>
-    <a type="button" href="#" class="btn btn-primary btn-block mt-3"  id="add_tr"><i class="fas fa-plus-square"></i>    เพิ่มข้อมูล</a>
+    <!-- <a type="button" href="#" class="btn btn-primary btn-block mt-3"  id="add_tr"><i class="fas fa-plus-square"></i>    เพิ่มข้อมูล</a> -->
     </p>
 </div>
 

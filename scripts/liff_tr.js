@@ -45,8 +45,8 @@ function fetch_tr(obj)
     var html_card = "";
     while(obj[i])
     {
-        console.log(obj[i].pea);
-        html_card = html_card + '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-3"><a class="card nav-link" href="?action=tr_detail&pea_no='+obj[i].pea+'"><div class="card-body"><div class="row"><div class="col-auto"><p>Pea: '+obj[i].pea+'</p></div><div class="col"><span class="text-primary"><i class="fas fa-info-circle fa-2x float-right"></i><span></div></div></div> </a></div>';
+        console.log(obj[i].pea_no);
+        html_card = html_card + '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-3"><a class="card nav-link" href="?action=tr_detail&pea_no='+obj[i].pea_no+'"><div class="card-body"><div class="row"><div class="col-auto"><p>Pea: '+obj[i].pea_no+'</p></div><div class="col"><span class="text-primary"><i class="fas fa-info-circle fa-2x float-right"></i><span></div></div></div> </a></div>';
         i++;
     }
     $('#card-area').html(html_card);
