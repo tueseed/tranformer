@@ -1,35 +1,57 @@
 <div class="row">
   <h6 class="p-3 font-weight-bold pt-3 rounded-pill bg-primary text-white">
-    <i class="fas fa-table"></i> ข้อมูลภาพรวมของระบบ
+    <i class="fas fa-table"></i> ข้อมูลหม้อแปลง
   </h6>
 </div>
 <!-- <div class="dropdown-divider"></div> -->
 <div class="row">
-  <div class="col-sm-12 col-md-6 col-lg-4">
+  <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card mt-2 mt-2">
       <div class="card-body">
-        <h5 class="card-title">ลูกค้ารายสำคัญ</h5>
-        <p class="card-text" id="high_value_card"></p>
-        <a href="?action=high_value" class="btn btn-primary">รายละเอียด</a>
+        <h5 class="card-title">PEA : 45-25623</h5>
+        <p class="card-text" id=""> ขนาด 150 Kva</p>
+        <div class="progress mt-2 mb-2" style="height:30px">
+            <div class="progress-bar bg-danger progress-bar-striped" style="width:85%;height:30px" id="progress_bar">85 %</div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-12 col-md-6 col-lg-4">
+
+  <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card mt-2 mt-2">
       <div class="card-body">
-        <h5 class="card-title">ลูกค้าธุรกิจเสริม</h5>
-        <p class="card-text" id="bu_card"></p>
-        <a href="?action=bu" class="btn btn-primary">รายละเอียด</a>
+        <h5 class="card-title">PEA : 52-23653</h5>
+        <p class="card-text" id=""> ขนาด 100 Kva</p>
+        <div class="progress mt-2 mb-2" style="height:30px">
+            <div class="progress-bar bg-danger progress-bar-striped" style="width:82%;height:30px" id="progress_bar">82 %</div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-12 col-md-6 col-lg-4">
+
+  <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card mt-2 mt-2">
       <div class="card-body">
-        <h5 class="card-title">ลูกค้าไม่มีธุรกิจเสริม</h5>
-        <p class="card-text" id="not_bu_card"></p>
-        <a href="?action=not_bu" class="btn btn-primary">รายละเอียด</a>
+        <h5 class="card-title">PEA : 22-58965</h5>
+        <p class="card-text" id=""> ขนาด 30 Kva</p>
+        <div class="progress mt-2 mb-2" style="height:30px">
+            <div class="progress-bar bg-danger progress-bar-striped" style="width:90%;height:30px" id="progress_bar">90 %</div>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="col-sm-12 col-md-6 col-lg-3">
+    <div class="card mt-2 mt-2">
+      <div class="card-body">
+        <h5 class="card-title">PEA : 45-25623</h5>
+        <p class="card-text" id=""> ขนาด 150 Kva</p>
+        <div class="progress mt-2 mb-2" style="height:30px">
+            <div class="progress-bar bg-danger progress-bar-striped" style="width:85%;height:30px" id="progress_bar">85 %</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
 </div>

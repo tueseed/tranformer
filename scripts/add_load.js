@@ -1,9 +1,15 @@
-function tr_edit_detail()
+$( document).ready(function() {
+    get_tr_data();
+});
+
+
+function get_tr_data()
 {
     var pea_no = getUrlVars()["pea_no"]; 
-    console.log(pea_no);
+    $('#pea_no').html(pea_no);
     var formData = new FormData();
     formData.append('pea_no',pea_no);
+    formData.append('request','get_data');
     $.ajax({
         url: './api/detail_api_2.php',
         method: 'POST',
@@ -31,64 +37,19 @@ function tr_edit_detail()
         success: function(response)
         {
             var obj = JSON.parse(response) || {};
-            fetch_edit_detail(obj);
+            $('#kva').val(obj[0].kva);
+ 
+    $('#Phase').val(obj[0].phase);
+    $('#location').html(obj[0].location);
         },
     complete :function(){
         $.unblockUI();
             }	
         });  
+
 }
 
-function fetch_edit_detail(obj)
-{
-    $('#pea_no').html(obj[0].pea_no);
-    $('#kva').val(obj[0].kva);
-
-    $('#Phase').val(obj[0].phase);
-    $('#location').html(obj[0].location);
-
-    $('#c1a').val(obj[0].c1a);
-    $('#c1b').val(obj[0].c1b);
-    $('#c1c').val(obj[0].c1c);
-
-    $('#c2a').val(obj[0].c2a);
-    $('#c2b').val(obj[0].c2b);
-    $('#c2c').val(obj[0].c2c);
-    if((obj[0].c2a == 0 || obj[0].c2a == null ) && (obj[0].c2b == 0 || obj[0].c2b == null) && (obj[0].c2c == 0 || obj[0].c2c == null) ){$('[name=amp_param_2]').val('--')}
-    
-    $('#c3a').val(obj[0].c3a);
-    $('#c3b').val(obj[0].c3b);
-    $('#c3c').val(obj[0].c3c);
-    if((obj[0].c3a == 0 || obj[0].c3a == null ) && (obj[0].c3b == 0 || obj[0].c3b == null) && (obj[0].c3c == 0 || obj[0].c3c == null) ){$('[name=amp_param_3]').val('--')}
-
-    $('#c4a').val(obj[0].c4a);
-    $('#c4b').val(obj[0].c4b);
-    $('#c4c').val(obj[0].c4c);
-    if((obj[0].c4a == 0 || obj[0].c4a == null ) && (obj[0].c4b == 0 || obj[0].c4b == null) && (obj[0].c4c == 0 || obj[0].c4c == null) ){$('[name=amp_param_4]').val('--')}
-
-    $('#v1a').val(obj[0].v1a);
-    $('#v1b').val(obj[0].v1b);
-    $('#v1c').val(obj[0].v1c);
-
-    $('#v2a').val(obj[0].v2a);
-    $('#v2b').val(obj[0].v2b);
-    $('#v2c').val(obj[0].v2c);
-    if((obj[0].v2a == 0 || obj[0].v2a == null ) && (obj[0].v2b == 0 || obj[0].v2b == null) && (obj[0].v2c == 0 || obj[0].v2c == null) ){$('[name=volt_param_2]').val('--')} 
-
-    $('#v3a').val(obj[0].v3a);
-    $('#v3b').val(obj[0].v3b);
-    $('#v3c').val(obj[0].v3c);
-    if((obj[0].v3a == 0 || obj[0].v3a == null ) && (obj[0].v3b == 0 || obj[0].v3b == null) && (obj[0].v3c == 0 || obj[0].v3c == null) ){$('[name=volt_param_3]').val('--')} 
-
-    $('#v4a').val(obj[0].v4a);
-    $('#v4b').val(obj[0].v4b);
-    $('#v4c').val(obj[0].v4c);
-    if((obj[0].v4a == 0 || obj[0].v4a == null ) && (obj[0].v4b == 0 || obj[0].v4b == null) && (obj[0].v4c == 0 || obj[0].v4c == null) ){$('[name=volt_param_4]').val('--')}
-
-    $('#tr_id').val(obj[0].id);
-}
-
-function send_edit()
+function add_data()
 {
     var pea_no = getUrlVars()["pea_no"]; 
     var formData = new FormData();
@@ -131,10 +92,13 @@ function send_edit()
 
     formData.append('tr_id',$('#tr_id').val());
 
+   formData.append('request','add_data');
+
+
 
     
     $.ajax({
-        url: './api/edit_api.php',
+        url: './api/add_load_api.php',
         method: 'POST',
         data: formData,
         async: true,
@@ -163,7 +127,7 @@ function send_edit()
             $.unblockUI();
             Swal.fire({
                 title: 'สำเร็จ!',
-                html: 'แก้ไขข้อมูลเรียบร้อย...<br/> ',
+                html: 'เพิ่มข้อมูลเรียบร้อย...<br/> ',
                 type: 'success',
                 timer: 5000
             });
@@ -174,9 +138,8 @@ function send_edit()
             }	
         }); 
 }
-$( document).ready(function() {
-    tr_edit_detail();
-});
+
+
 
 (function ($) {
     "use strict";

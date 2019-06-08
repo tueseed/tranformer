@@ -55,6 +55,8 @@ function fetch_detail2(obj)
         $('#rate_amp').html(rate_amp.toFixed(0) + ' A.');
         $('#location').html(obj[0].location);
         $('#map').attr('href','https://www.google.com/maps/place/'+obj[0].lat + ',' + obj[0].long)
+        $('#edit_btn').hide();
+        $('#add_btn').attr('href','?action=add_load&pea_no='+ obj[0 ].pea_no);
 
     }
     else if(obj[1].load == 'yes')
@@ -77,7 +79,7 @@ function fetch_detail2(obj)
         {
             cls = 'progress-bar bg-danger progress-bar-striped';
         }
-        else if(50 < load < 79)
+        else if(load > 50 && load <80)
         {
             cls = 'progress-bar bg-warning progress-bar-striped';
         }
@@ -137,6 +139,7 @@ function fetch_detail2(obj)
         $('#v4c').html(obj[0].v4c);
         if((obj[0].v4a == 0 || obj[0].v4a == null ) && (obj[0].v4b == 0 || obj[0].v4b == null) && (obj[0].v4c == 0 || obj[0].v4c == null) ){$('[name=volt_param_4]').html('--')}
         $('#edit_btn').attr('href','?action=edit&pea_no='+ obj[0 ].pea_no)
+        $('#add_btn').attr('href','?action=add_load&pea_no='+ obj[0 ].pea_no)
 
 
        
