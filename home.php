@@ -3,12 +3,6 @@
     <i class="fas fa-table"></i> ข้อมูลหม้อแปลง
   </h6>
 </div>
-
-<div class="row">
-  <div class="col-sm-12 col-md-6 col-lg-12">
-    <div id="map"></div>
-  </div> 
-</div>
 <!-- <div class="dropdown-divider"></div> -->
 <div class="row">
   <div class="col-sm-12 col-md-6 col-lg-3">
