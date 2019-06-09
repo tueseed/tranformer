@@ -3,6 +3,12 @@
     <i class="fas fa-table"></i> ข้อมูลหม้อแปลง
   </h6>
 </div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-12">
+    <div id="map"></div>
+  </div> 
+</div>
 <!-- <div class="dropdown-divider"></div> -->
 <div class="row">
   <div class="col-sm-12 col-md-6 col-lg-3">
@@ -52,6 +58,18 @@
       </div>
     </div>
   </div>
-  
+  <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   
 </div>

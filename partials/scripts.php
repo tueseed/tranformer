@@ -12,3 +12,5 @@
 <script src="./assets/js/bootstrap-datepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.th.min.js"></script>
 <script src="./assets/js/jquery.blockUI.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvtHUZCKKIgkiWOgZPWBCo53RUjHGlQUc&callback=initMap" async defer></script>

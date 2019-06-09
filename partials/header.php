@@ -49,7 +49,7 @@
                 <i class="fa fa-search" aria-hidden="true"></i>  
                 ค้นหาหม้อแปลง
               </a>
-              <a class="nav-link <?=$action=='search'?'active':'' ?>" href="?action=search">
+              <a class="nav-link <?=$action=='report'?'active':'' ?>" href="?action=report">
                 <i class="fa fa-clipboard" aria-hidden="true"></i>
                 ออกรายงาน
               </a>
