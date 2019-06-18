@@ -16,7 +16,7 @@
    
     $mpdf->SetHTMLHeader('
         <div style="text-align: right; font-weight: bold;">
-            การไฟฟ้าส่วนภูมิภาค..
+        หน้าที่ {PAGENO} จากทั้งหมด {nbpg}
         </div>
     ');
 
