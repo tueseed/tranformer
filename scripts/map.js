@@ -1,96 +1,85 @@
-    var map;
-    var data = "https://developer.nostramap.com/developer/asset/data/dataTestCluster.json";
-    nostra.onready = function () {
-                                    nostra.config.Language.setLanguage(nostra.language.E);
-                                    initialize();
-                                };
-    function initialize() {
-                            showLoading();
-                            map = new nostra.maps.Map("map", {
-                                                                id: "mapSample",
-                                                                level: 6,
-                                                                lat: 12.8161643,
-                                                                lon: 101.5500735,
-                                                                country: "TH"
-                                                            });
-                            map.events.load = function () {
-                                                            jQuery.ajax({
-                                                                            url: data,
-                                                                            jsonp: "callback",
-                                                                            dataType: "json",
-                                                                            contentType: "application/json",
-                                                                            success: function (results)
-                                                                             {
-                                                                                var markerClusterer = new nostra.maps.symbols.MarkerClusterer({        
-                                attributeToSetSum: "revenue",
-                                data:
-                                [
-                                    {
-                                        url: "https://developer.nostramap.com/developer/asset/image/iconCluster/Sum_Rev_lt10.png",
-                                        width: 60,
-                                        height: 60,
-                                        range: 1
-                                    },
-                                    {
-                                        url: "https://developer.nostramap.com/developer/asset/image/iconCluster/Sum_Rev_10-50.png",
-                                        width: 70,
-                                        height: 70,
-                                        range: 10000000
-                                    },
-                                    {
-                                        url: "https://developer.nostramap.com/developer/asset/image/iconCluster/Sum_Rev_50up.png",
-                                        width: 80,
-                                        height: 80,
-                                        range: 50000000
+var initExtent, map, point, lat, lon, pointLayer, mp;
+            var currentType = "point";
+            var points = [];
+            var lstLabel = [];
+            var isFirstLoad = true;
+
+            nostra.onready = function () {
+                initialize();
+            };
+
+
+function initialize() 
+{
+
+    map = new nostra.maps.Map("map", {
+                                        id: "mapTest",
+                                        logo: true,
+                                        scalebar: true,
+                                        basemap: "streetmap",
+                                        slider: true,
+                                        level: 18,
+                                        lat: 13.722944,
+                                        lon: 100.530449
                                     }
-                                ]
-                            });
-                            var markerPin = new nostra.maps.symbols.MarkerPin({
-                                attributeToSetType: "rating",
-                                data:
-                                [
-                                    {
-                                        url: "https://developer.nostramap.com/developer/asset/image/iconCluster/ratting_4.png",
-                                        type: "4",
-                                        width: 34,
-                                        height: 42
-                                    },
-                                    {
-                                        url: "https://developer.nostramap.com/developer/asset/image/iconCluster/ratting_4.5.png",
-                                        type: "4.5",
-                                        width: 34,
-                                        height: 42
-                                    },
-                                    {
-                                        url: "https://developer.nostramap.com/developer/asset/image/iconCluster/ratting_5.png",
-                                        type: "5",
-                                        width: 34,
-                                        height: 42
-                                    }
-                                ]
-                            });
-                            var cluster = new nostra.maps.MarkerClustering({
-                                "map": map,
-                                "data": results,
-                                "callout": {
-                                    "width": 300,
-                                    "height": 150
-                                },
-                                "markerClusterer": markerClusterer,
-                                "markerPin": markerPin
-                            });
-                            hideLoading();
-                        },
-                        error: function (response) {
-                            console.log("error", response);
-                            hideLoading();
-                        }
-                    });
-                };
-            }
-            function showLoading() {
-                document.getElementById("dlgLoading").style.display = "block";
-            }
-            function hideLoading() {
-                document.getElementById("dlgLoading").style.display = "none";
-            }
+                            );
+    pointLayer = new nostra.maps.layers.GraphicsLayer(map, { id: "pointLayer", mouseOver: false });
+    map.addLayer(pointLayer);
+    
+    map.events.load = function () {
+                                        isFirstLoad = false;
+                                        map.disableDoubleClickZoom();
+                                        hideLoading();
+                                    };
+    map.events.layerAddComplete = function () {
+                                                if (!isFirstLoad) {
+                                                    hideLoading();
+                                                }
+                                             };
+
+    function showLoading() {
+                                document.getElementById("dlgLoading").style.display = "block";
+                            }
+    function hideLoading() {
+                                document.getElementById("dlgLoading").style.display = "none";
+                            }
+
+    map.events.click = function (evt) {
+                                lat = evt.mapPoint.getLatitude();
+                                lon = evt.mapPoint.getLongitude();
+                                var nostraCallout = new nostra.maps.Callout({ title: "Test", content: "POI_NAME: Test ROAD:  Test" });
+                                var nostraLabel = new nostra.maps.symbols.Label({
+                                    text: "123456",
+                                    size: "10",
+                                    position: "Top",
+                                    color: "#353535",
+                                    haloColor: "#ffffff".value,
+                                    haloSize: "1",
+                                    xoffset: "0",
+                                    yoffset: "0"
+                                });
+                                lstLabel.push(nostraLabel);
+                                var pointMarker = new nostra.maps.symbols.Marker(
+                                                                                    { 
+                                                                                        url: "https://developer.nostramap.com/developer/asset/image/iconCluster/ratting_4.png", 
+                                                                                        width: 20,
+                                                                                        height: 20, 
+                                                                                        attributes: { 
+                                                                                                        POI_NAME: "TestAttr",
+                                                                                                        POI_ROAD: "TestAttr" 
+                                                                                                    },
+                                                                                        callout: nostraCallout,
+                                                                                        label: nostraLabel 
+                                                                                    }
+                                                                                );
+                                var g = pointLayer.addMarker(lat, lon, pointMarker);
+                                
+    }
+
+}
+
+function get_point()
+{
+
+
+}
