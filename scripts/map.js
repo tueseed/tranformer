@@ -23,7 +23,7 @@ function initialize()
                                         lon: 100.530449
                                     }
                             );
-    pointLayer = new nostra.maps.layers.GraphicsLayer(map, { id: "pointLayer", mouseOver: false });
+    pointLayer = new nostra.maps.layers.GraphicsLayer(map, { id: "pointLayer", mouseOver: true });
     map.addLayer(pointLayer);
     
     map.events.load = function () {
@@ -61,9 +61,9 @@ function initialize()
                                 lstLabel.push(nostraLabel);
                                 var pointMarker = new nostra.maps.symbols.Marker(
                                                                                     { 
-                                                                                        url: "https://developer.nostramap.com/developer/asset/image/iconCluster/ratting_4.png", 
-                                                                                        width: 20,
-                                                                                        height: 20, 
+                                                                                        url: "https://tranformer.herokuapp.com/images/tr.png", 
+                                                                                        width: 40,
+                                                                                        height: 40, 
                                                                                         attributes: { 
                                                                                                         POI_NAME: "TestAttr",
                                                                                                         POI_ROAD: "TestAttr" 
