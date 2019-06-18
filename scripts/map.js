@@ -1,27 +1,27 @@
-var map;
-            var data = "https://developer.nostramap.com/developer/asset/data/dataTestCluster.json";
-
-            nostra.onready = function () {
-                nostra.config.Language.setLanguage(nostra.language.E);
-                initialize();
-            };
-            function initialize() {
-                showLoading();
-                map = new nostra.maps.Map("map", {
-                    id: "mapSample",
-                    level: 6,
-                    lat: 12.8161643,
-                    lon: 101.5500735,
-                    country: "TH"
-                });
-                map.events.load = function () {
-                    jQuery.ajax({
-                        url: data,
-                        jsonp: "callback",
-                        dataType: "json",
-                        contentType: "application/json",
-                        success: function (results) {
-                            var markerClusterer = new nostra.maps.symbols.MarkerClusterer({        
+    var map;
+    var data = "https://developer.nostramap.com/developer/asset/data/dataTestCluster.json";
+    nostra.onready = function () {
+                                    nostra.config.Language.setLanguage(nostra.language.E);
+                                    initialize();
+                                };
+    function initialize() {
+                            showLoading();
+                            map = new nostra.maps.Map("map", {
+                                                                id: "mapSample",
+                                                                level: 6,
+                                                                lat: 12.8161643,
+                                                                lon: 101.5500735,
+                                                                country: "TH"
+                                                            });
+                            map.events.load = function () {
+                                                            jQuery.ajax({
+                                                                            url: data,
+                                                                            jsonp: "callback",
+                                                                            dataType: "json",
+                                                                            contentType: "application/json",
+                                                                            success: function (results)
+                                                                             {
+                                                                                var markerClusterer = new nostra.maps.symbols.MarkerClusterer({        
                                 attributeToSetSum: "revenue",
                                 data:
                                 [
