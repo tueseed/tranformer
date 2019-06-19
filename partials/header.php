@@ -6,7 +6,7 @@
     <title>ระบบบันทึกการวัดโหลดหม้อแปลง--กานไฟฟ้าส่วนภูมิภาคอำเภอโพธาราม</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/theme_1545570683953.css">
-    <!-- <link rel="stylesheet" href="./assets/css/map.css"> -->
+    <link rel="stylesheet" href="./assets/css/map.css">
     <link href="https://fonts.googleapis.com/css?family=Sarabun|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css">
@@ -50,6 +50,10 @@
                 <i class="fa fa-search" aria-hidden="true"></i>  
                 ค้นหาหม้อแปลง
               </a>
+              <a class="nav-link <?=$action=='map'?'active':'' ?>" href="?action=map">
+                <i class="fa fa-search" aria-hidden="true"></i>  
+                แผนที่หม้อแปลง
+              </a>
               <a class="nav-link <?=$action=='report'?'active':'' ?>" href="?action=report">
                 <i class="fa fa-clipboard" aria-hidden="true"></i>
                 ออกรายงาน
@@ -57,5 +61,5 @@
             </div>
             <hr class="clearfix"/>
           </div>
-          <div class="col-sm-12 col-md-8 col-lg-10">
+          <div class="col-sm-12 col-md-8 col-lg-10 map">
           

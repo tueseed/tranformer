@@ -1,2 +1,3 @@
-<div id="map"></div>
+<div class="map" id="map"></div>
+
 
