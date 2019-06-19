@@ -18,7 +18,7 @@ function initialize()
                                         scalebar: true,
                                         basemap: "streetmap",
                                         slider: true,
-                                        level: 18,
+                                        level: 12,
                                         lat: 13.690122,
                                         lon: 99.8490957
                                     }
@@ -44,7 +44,7 @@ function initialize()
                                 document.getElementById("dlgLoading").style.display = "none";
                             }
 
-    map.events.click = function (evt) {
+    /*map.events.click = function (evt) {
                                         lat = evt.mapPoint.getLatitude();
                                         lon = evt.mapPoint.getLongitude();
                                         var nostraCallout = new nostra.maps.Callout({ title: "Test", content: "POI_NAME: Test ROAD:  Test" });
@@ -74,7 +74,7 @@ function initialize()
                                                                                         );
                                         var g = pointLayer.addMarker(lat, lon, pointMarker);
                                         
-                                }
+                                }*/
                                 get_point();
 }
 
@@ -122,9 +122,9 @@ function plt_point(obj)
         }
         lat = obj[i].lat;
         lon = obj[i].long;
-        var nostraCallout = new nostra.maps.Callout({ title: "Test", content: "POI_NAME: Test ROAD:  Test" });
+        var nostraCallout = new nostra.maps.Callout({ title: obj[i].pea_no, content: "สถานที่: " + obj[i].location + "<br>เปอร์เซนต์โหลด: " + load.toFixed(2) + "%" });
         var nostraLabel = new nostra.maps.symbols.Label({
-                                                            text: obj[i].pea_no,
+                                                            
                                                             size: "10",
                                                             position: "Top",
                                                             color: "#353535",
