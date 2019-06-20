@@ -18,7 +18,7 @@ function initialize()
                                         scalebar: true,
                                         basemap: "streetmap",
                                         slider: true,
-                                        level: 12,
+                                        level: 13,
                                         lat: 13.690122,
                                         lon: 99.8490957
                                     }

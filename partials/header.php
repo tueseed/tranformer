@@ -51,7 +51,7 @@
                 ค้นหาหม้อแปลง
               </a>
               <a class="nav-link <?=$action=='map'?'active':'' ?>" href="?action=map">
-                <i class="fa fa-search" aria-hidden="true"></i>  
+              <i class="fa fa-map-marked-alt"></i>  
                 แผนที่หม้อแปลง
               </a>
               <a class="nav-link <?=$action=='report'?'active':'' ?>" href="?action=report">
@@ -61,5 +61,5 @@
             </div>
             <hr class="clearfix"/>
           </div>
-          <div class="col-sm-12 col-md-8 col-lg-10 map">
+          <div class="col-sm-12 col-md-8 col-lg-10">
           
