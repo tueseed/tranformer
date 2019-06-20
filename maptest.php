@@ -81,6 +81,7 @@
 
             function initialize() {
 
+                nostra.config.Language.setLanguage("L");
                 map = new nostra.maps.Map("map", {
                     id: "mapTest",
                     logo: true,

@@ -12,6 +12,7 @@ var initExtent, map, point, lat, lon, pointLayer, mp;
 function initialize() 
 {
 
+    nostra.config.Language.setLanguage("L");
     map = new nostra.maps.Map("map", {
                                         id: "mapTest",
                                         logo: true,
@@ -23,26 +24,10 @@ function initialize()
                                         lon: 99.8490957
                                     }
                             );
-    pointLayer = new nostra.maps.layers.GraphicsLayer(map, { id: "pointLayer", mouseOver: true });
+    pointLayer = new nostra.maps.layers.GraphicsLayer(map, { id: "pointLayer", mouseOver: false });
     map.addLayer(pointLayer);
+    get_point();
     
-    map.events.load = function () {
-                                        isFirstLoad = false;
-                                        map.disableDoubleClickZoom();
-                                        hideLoading();
-                                    };
-    map.events.layerAddComplete = function () {
-                                                if (!isFirstLoad) {
-                                                    hideLoading();
-                                                }
-                                             };
-
-    function showLoading() {
-                                document.getElementById("dlgLoading").style.display = "block";
-                            }
-    function hideLoading() {
-                                document.getElementById("dlgLoading").style.display = "none";
-                            }
 
     /*map.events.click = function (evt) {
                                         lat = evt.mapPoint.getLatitude();
@@ -75,7 +60,7 @@ function initialize()
                                         var g = pointLayer.addMarker(lat, lon, pointMarker);
                                         
                                 }*/
-                                get_point();
+                                
 }
 
 function get_point()
@@ -116,13 +101,17 @@ function plt_point(obj)
         {
             var icon = "./images/tr_warning.png";
         }
-        else if(load < 50)
+        else if(load > 0 && load <50)
         {
             var icon = "./images/tr_success.png";
         }
+        else if(load == 0)
+        {
+            var icon = "./images/tr_non.png";
+        }
         lat = obj[i].lat;
         lon = obj[i].long;
-        var nostraCallout = new nostra.maps.Callout({ title: obj[i].pea_no, content: "สถานที่: " + obj[i].location + "<br>เปอร์เซนต์โหลด: " + load.toFixed(2) + "%" });
+        var nostraCallout = new nostra.maps.Callout({ title: obj[i].pea_no_tr, content: "สถานที่: <span id='test'></span>" + obj[i].location + "<br>เปอร์เซนต์โหลด: " + load.toFixed(2) + "%" });
         var nostraLabel = new nostra.maps.symbols.Label({
                                                             
                                                             size: "10",
@@ -140,7 +129,7 @@ function plt_point(obj)
                                                                 width: 40,
                                                                 height: 40, 
                                                                 attributes: { 
-                                                                                POI_NAME: "TestAttr",
+                                                                                POI_NAME: obj[i].pea_no,
                                                                                 POI_ROAD: "TestAttr" 
                                                                             },
                                                                 callout: nostraCallout,
@@ -148,6 +137,77 @@ function plt_point(obj)
                                                             }
                                                         );
         var g = pointLayer.addMarker(lat, lon, pointMarker);
+        
         i++;
     }
 }
+
+function test()
+{
+    $("#test").html("test");
+    alert("test...");
+    console.log(pointLayer);
+    console.log(pointLayer.graphics[0].symbol.attributes.POI_NAME);
+}
+
+function test2()
+{
+    pointLayer.graphics[0].symbol.attributes.POI_NAME = "0000000";
+    console.log(pointLayer.graphics[0].symbol.attributes.POI_NAME);
+    var i =0;
+    while(pointLayer.graphics[i])
+    {
+        console.log(pointLayer.graphics[i].symbol.attributes.POI_NAME);
+        pointLayer.graphics[i].symbol.marker.url = './images/tr_danger.png';
+        i++;
+    }
+}
+
+function zm()
+{
+    map.zoomLevel(20);
+    map.panTo(13.6251663230766,99.8483356079455)
+    
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////FIRE BASE//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// var room_ref = firebase.database().ref(); 
+// room_ref.on('value',function(snapshot){
+//                                         document.getElementById("player_area").innerHTML = "";
+//                                         var player_inroom = snapshot.val();
+//                                         if(snapshot.val() == null)
+//                                         {
+//                                             sessionStorage.removeItem('room_id');
+//                                             sessionStorage.removeItem('player_key');
+//                                             sessionStorage.removeItem('status');
+//                                             window.location.href="https://shake-battle.herokuapp.com/?code=return";
+//                                         }
+//                                         var i = 0;
+//                                         while(Object.keys(player_inroom)[i])
+//                                         {
+//                                             var name = Object.values(player_inroom)[i].playername;
+//                                             var score = Object.values(player_inroom)[i].score;
+//                                             var picture = Object.values(player_inroom)[i].picture;
+//                                             var player_status = Object.values(player_inroom)[i].status;
+//                                             if(Object.keys(player_inroom)[i] !== "status"){
+//                                             render_player(name,score,picture,Object.keys(player_inroom)[i],player_status);
+//                                             console.log(Object.values(player_inroom)[i].playername);
+//                                             }
+//                                             i++;
+//                                         }
+// });
+// The key of a root reference is null 
+
+
+
+var room = firebase.database().ref('tr_load_log');
+room.on('value',function(snapshot){
+                                    console.log(snapshot.val());
+                                  }
+                                    );
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
