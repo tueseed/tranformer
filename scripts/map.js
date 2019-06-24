@@ -211,3 +211,14 @@ room.on('value',function(snapshot){
                                     );
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+$( document).ready(function() {
+    $('#txt_search').autocomplete({
+        serviceUrl: './api/autocomplete_api.php',
+        // onSelect: function (suggestion) {
+        //     alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+        //}
+    })
+  });
+
+
