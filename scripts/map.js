@@ -19,14 +19,15 @@ function initialize()
                                         scalebar: true,
                                         basemap: "streetmap",
                                         slider: true,
-                                        level: 13,
-                                        lat: 13.690122,
-                                        lon: 99.8490957
+                                        level: 12,
+                                        lat: 13.7283757945257,
+                                        lon: 99.7690354331662
                                     }
                             );
     pointLayer = new nostra.maps.layers.GraphicsLayer(map, { id: "pointLayer", mouseOver: false });
     map.addLayer(pointLayer);
     get_point();
+   
     
 
     /*map.events.click = function (evt) {
@@ -113,8 +114,8 @@ function plt_point(obj)
         lon = obj[i].long;
         var nostraCallout = new nostra.maps.Callout({ title: obj[i].pea_no_tr, content: "สถานที่: <span id='test'></span>" + obj[i].location + "<br>เปอร์เซนต์โหลด: " + load.toFixed(2) + "%" });
         var nostraLabel = new nostra.maps.symbols.Label({
-                                                            
-                                                            size: "10",
+                                                            text:obj[i].pea_no_tr,
+                                                            size: "8",
                                                             position: "Top",
                                                             color: "#353535",
                                                             haloColor: "#ffffff".value,
@@ -129,7 +130,7 @@ function plt_point(obj)
                                                                 width: 40,
                                                                 height: 40, 
                                                                 attributes: { 
-                                                                                POI_NAME: obj[i].pea_no,
+                                                                                POI_NAME: obj[i].pea_no_tr,
                                                                                 POI_ROAD: "TestAttr" 
                                                                             },
                                                                 callout: nostraCallout,
@@ -163,10 +164,12 @@ function test2()
     }
 }
 
-function zm()
+function zm(lat,lon)
 {
-    map.zoomLevel(20);
-    map.panTo(13.6251663230766,99.8483356079455)
+     map.zoomLevel(20);
+     //map.panTo(13.756088571784,99.8132173044767)
+     map.panTo(lat,lon)
+    console.log(lat,lon);
     
 }
 
@@ -212,13 +215,23 @@ room.on('value',function(snapshot){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-$( document).ready(function() {
-    $('#txt_search').autocomplete({
-        serviceUrl: './api/autocomplete_api.php',
-        // onSelect: function (suggestion) {
-        //     alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
-        //}
-    })
-  });
+
+ 
+    $("#txt_search").autocomplete(
+                                        {
+                                            //    source: get_autocom()
+                                             serviceUrl: './api/autocomplete_api.php',
+                                             minChars:3,
+                                             onSelect: function (suggestion) {
+                                            map.zoomLevel(5);
+                                             zm(suggestion.data.lat,suggestion.data.lon);
+                                             
+                                            }
+                                        
+                                        }
+                                    );
+  
+
+
 
 

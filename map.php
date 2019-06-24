@@ -1,12 +1,12 @@
 
 <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-12">
       <input type="text" class="form-control" id="txt_search" placeholder="ใช้ Pea No. ของหม้อแปลงเพื่อค้นหา">
       <input type="hidden" id="hidden-field">
     </div>
-    <div class="col-lg-2">
+    <!-- <div class="col-lg-2">
       <button type="button" class="btn btn-primary" onclick="">ค้นหา</button>
-    </div>
+    </div> -->
 </div>
 <div class="row mt-3">
     <div id="map"></div>
