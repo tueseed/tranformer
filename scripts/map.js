@@ -107,7 +107,7 @@ function plt_point(obj)
         }
         else if(load == 0)
         {
-            var icon = "./images/tr_non.png";
+            var icon = "./images/tr_non.PNG";
         }
         lat = obj[i].lat;
         lon = obj[i].long;
