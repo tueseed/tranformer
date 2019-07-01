@@ -27,7 +27,21 @@ function initialize()
     pointLayer = new nostra.maps.layers.GraphicsLayer(map, { id: "pointLayer", mouseOver: false });
     map.addLayer(pointLayer);
     get_point();
-   
+    
+    map.events.zoom = function(evt)
+    {
+        var lavel = map.getLevel();
+        console.log(map.getLevel());
+
+        if(lavel > 15 )
+        {
+            setLavelVisible(true);
+        }
+        else if(lavel < 16)
+        {
+            setLavelVisible(false);
+        }
+    }
     
 
     /*map.events.click = function (evt) {
@@ -64,6 +78,22 @@ function initialize()
                                 
 }
 
+function setLavelVisible(visible) 
+{
+    console.log("setlavel");
+    if (visible) {
+        for (var i = 0; i < lstLabel.length; i++) {
+            pointLayer.showLabel(lstLabel[i]);
+        }
+    
+    } else {
+        for (var i = 0; i < lstLabel.length; i++) {
+            pointLayer.hideLabel(lstLabel[i]);
+        }
+    }
+}
+
+
 function get_point()
 {
     $.ajax({
@@ -78,9 +108,10 @@ function get_point()
                     var obj = JSON.parse(response) || {};
                     console.log("call point success");
                     plt_point(obj);
-                },	
+                },
+                complete:function(){setLavelVisible(false);}	
             });
-
+            
 }
 
 function plt_point(obj)
@@ -93,18 +124,18 @@ function plt_point(obj)
         var total_amp = parseInt(obj[i].t_a) + parseInt(obj[i].t_b) + parseInt(obj[i].t_c);
         var avg_amp = total_amp/3
         var load = (total_amp/rate_amp)*100;
-        
+        var unb_per = ((obj[i].max_amp-avg_amp)*100)/avg_amp;
         if(load > 80)
         {
-            var icon = "./images/tr_danger.png";
+            if(unb_per > 20){ var icon = "./images/tr_danger_u.png";}else{var icon = "./images/tr_danger.png";}
         }
         else if(load > 50 && load <80)
         {
-            var icon = "./images/tr_warning.png";
+            if(unb_per > 20){var icon = "./images/tr_warning_u.png";}else{var icon = "./images/tr_warning.png";}  
         }
         else if(load > 0 && load <50)
         {
-            var icon = "./images/tr_success.png";
+            if(unb_per >20){var icon = "./images/tr_success_u.png";}else{var icon = "./images/tr_success.png";}     
         }
         else if(load == 0)
         {
@@ -112,7 +143,7 @@ function plt_point(obj)
         }
         lat = obj[i].lat;
         lon = obj[i].long;
-        var nostraCallout = new nostra.maps.Callout({ title: obj[i].pea_no_tr, content: "สถานที่: <span id='test'></span>" + obj[i].location + "<br>เปอร์เซนต์โหลด: " + load.toFixed(2) + "%" });
+        var nostraCallout = new nostra.maps.Callout({ title: obj[i].pea_no_tr, content: "<b>สถานที่:</b> " + obj[i].location + "<br><b>เปอร์เซนต์โหลด:</b> " + load.toFixed(2) + "%<br><b>กระแส:</b><br>เฟส A: "+ obj[i].t_a +" A.<br>เฟส B: " + obj[i].t_b + " A.<br>เฟส C: " +obj[i].t_c+ " A.<br><b>เปอร์เซนต์ Unbalance :</b>" + unb_per.toFixed(2) + "%"});
         var nostraLabel = new nostra.maps.symbols.Label({
                                                             text:obj[i].pea_no_tr,
                                                             size: "8",
