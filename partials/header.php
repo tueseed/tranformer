@@ -57,7 +57,7 @@
               </a>
               <a class="nav-link <?=$action=='report'?'active':'' ?>" href="?action=report">
                 <i class="fa fa-clipboard" aria-hidden="true"></i>
-                ออกรายงาน
+                รายงานวัดโหลด
               </a>
             </div>
             <hr class="clearfix"/>
