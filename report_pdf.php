@@ -1,7 +1,40 @@
 <?php
     require_once __DIR__ . '/vendor/autoload.php';
     //require_once './utils/db_connector.php';
-
+    require('./utils/db_connector.php');
+    $d1 = $_GET["d1"];
+    $d2 = $_GET["d2"];
+    //////////////
+    $sql_report = "
+                SELECT 
+                    tbl_tr_ptm.pea_no AS pea_no_tr,                        
+                    tbl_tr_ptm.*,
+                    GREATEST(
+                                (COALESCE(tbl_load_log.c1a,0)+COALESCE(tbl_load_log.c2a,0)+COALESCE(tbl_load_log.c3a,0)+COALESCE(tbl_load_log.c4a,0)),
+                                (COALESCE(tbl_load_log.c1b,0)+COALESCE(tbl_load_log.c2b,0)+COALESCE(tbl_load_log.c3b,0)+COALESCE(tbl_load_log.c4b,0)),
+                                (COALESCE(tbl_load_log.c1c,0)+COALESCE(tbl_load_log.c2c,0)+COALESCE(tbl_load_log.c3c,0)+COALESCE(tbl_load_log.c4c,0))
+                            ) AS max_amp,
+                    (COALESCE(tbl_load_log.c1a,0)+COALESCE(tbl_load_log.c2a,0)+COALESCE(tbl_load_log.c3a,0)+COALESCE(tbl_load_log.c4a,0)) AS t_a,
+                    (COALESCE(tbl_load_log.c1b,0)+COALESCE(tbl_load_log.c2b,0)+COALESCE(tbl_load_log.c3b,0)+COALESCE(tbl_load_log.c4b,0)) AS t_b,
+                    (COALESCE(tbl_load_log.c1c,0)+COALESCE(tbl_load_log.c2c,0)+COALESCE(tbl_load_log.c3c,0)+COALESCE(tbl_load_log.c4c,0)) AS t_c,
+                    (COALESCE(tbl_load_log.c1a,0)+COALESCE(tbl_load_log.c1b,0)+COALESCE(tbl_load_log.c1c,0)) AS t_1,
+                    (COALESCE(tbl_load_log.c2a,0)+COALESCE(tbl_load_log.c2b,0)+COALESCE(tbl_load_log.c2c,0)) AS t_2,
+                    (COALESCE(tbl_load_log.c3a,0)+COALESCE(tbl_load_log.c3b,0)+COALESCE(tbl_load_log.c3c,0)) AS t_3,
+                    (COALESCE(tbl_load_log.c4a,0)+COALESCE(tbl_load_log.c4b,0)+COALESCE(tbl_load_log.c4c,0)) AS t_4,
+                    tbl_load_log.*,
+                    tbl_load_log.pea_no AS pea_no_log,
+                    COUNT(tbl_tr_ptm.pea_no) AS tr
+            FROM
+                tbl_tr_ptm
+            INNER JOIN
+                tbl_load_log
+            ON
+                tbl_tr_ptm.pea_no = tbl_load_log.pea_no
+            GROUP BY
+            tbl_tr_ptm.pea_no
+            ORDER BY tr";
+    $query_report = mysqli_query($conn,$sql_report);
+    /////////////
     
 
     
@@ -19,7 +52,7 @@
         หน้าที่ {PAGENO} จากทั้งหมด {nbpg}
         </div>
     ');
-
+    
     /*$mpdf->SetHTMLFooter('
     <table width="100%" border="0">
         <tr>
@@ -59,7 +92,7 @@
         <div>
             <img src="./assets/images/pea-logo.png" style="width:170px;margin: 0;padding-bottom:0px;" />
             <h1 style="font-size: 24px;">รายงานการวัดโหลดหม้อแปลง การไฟฟ้าส่วนภูมิภาคอำเภอโพธาราม</h1>
-            <h2 style="font-size: 20px;">ตั้งแต่วันที่ 01-01-2562 ถึง 31-12-2562</h2>
+            <h2 style="font-size: 20px;">ตั้งแต่วันที่ '.$d1.' ถึง '.$d2.'</h2>
         </div>
         <div>
             <table class="customTable" style="width:100%;height:100%;table-layout:fixed;overflow:hidden;text-align:center;">
@@ -94,10 +127,13 @@
                 </thead>
                 <tbody >
         ';
-       
+
+       $i = 1;
+       while($obj = mysqli_fetch_array($query_report))
+       {
         $body_page .= '
                         <tr>
-                            <td rowspan="2">99-99999</td>
+                            <td rowspan="2">'.$i.".".$obj["pea_no_tr"].'</td>
                             <td rowspan="2">3</td>
                             <td rowspan="2">150</td>
                             <td>I</td>
@@ -130,12 +166,11 @@
                             <td>214</td>
                             <td>215</td>
                             <td>156</td>
-                        </tr>
-                        
-                    </tbody>
-            </table>
-        </div>
-        
-    ';
+                        </tr>';
+                        $i++;
+       }   
+         $body_page .= '</tbody>
+                         </table>
+                         </div>  ';
     $mpdf->WriteHTML($body_page);
     $mpdf->Output();

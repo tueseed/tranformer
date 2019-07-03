@@ -92,5 +92,25 @@ function show_num_service(num)
   }
 }
 
+function getUrlVars() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+  });
+  return vars;
+}
+
+
+var action = getUrlVars()["action"];
+
+if(action == 'map')
+{
+  $('#tr_symbol').show();
+}
+else
+{
+  $('#tr_symbol').hide();
+}
+// alert(action);
 
 

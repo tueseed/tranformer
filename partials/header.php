@@ -49,7 +49,7 @@
               </a>
               <a class="nav-link <?=$action=='search'?'active':'' ?>" href="?action=search">
                 <i class="fa fa-search" aria-hidden="true"></i>  
-                ค้นหาหม้อแปลง
+                จัดการหม้อแปลง
               </a>
               <a class="nav-link <?=$action=='map'?'active':'' ?>" href="?action=map">
               <i class="fa fa-map-marked-alt"></i>  
@@ -61,6 +61,34 @@
               </a>
             </div>
             <hr class="clearfix"/>
+            <div id="tr_symbol">
+            <h5 class="header text-secondary font-weight-bold text-left">สัญลักษณ์</h5>
+              <div class="mt-2">
+                <img src="./images/tr_danger.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" style="background-color: gray;">&nbsp;โหลดเกิน 80 %
+              </div>
+              <div class="mt-2">
+                <img src="./images/tr_warning.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" style="background-color: gray;">&nbsp;โหลด 60-80 %
+              </div>
+              <div class="mt-2">
+                <img src="./images/tr_success.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" style="background-color: gray;">&nbsp;โหลดน้อยกว่า 60 %
+              </div>
+              <div class="mt-2">
+                <img src="./images/tr_non.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" style="background-color: gray;">&nbsp;ไม่มีข้อมูลวัดโหลด
+              </div>
+              <div class="mt-2">
+                <img src="./images/U.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" style="background-color: gray;">&nbsp;%Unbalance >20
+              </div>
+              <hr class="clearfix"/>
+              <h5 class="header text-secondary font-weight-bold text-left">ชั้นข้อมูล</h5>
+              <div class="custom-control custom-checkbox ml-2">
+                <input type="checkbox" class="custom-control-input" id="has_log" name="example1" checked>
+                <label class="custom-control-label" for="has_log">มีข้อมูลวัดโหลด</label>
+              </div>
+              <div class="custom-control custom-checkbox ml-2">
+                <input type="checkbox" class="custom-control-input" id="no_log" name="example1" checked>
+                <label class="custom-control-label" for="no_log">ไม่มีข้อมูลวัดโหลด</label>
+              </div>
+            </div>
           </div>
           <div class="col-sm-12 col-md-8 col-lg-10">
           

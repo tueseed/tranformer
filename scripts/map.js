@@ -1,4 +1,4 @@
-var initExtent, map, point, lat, lon, pointLayer, mp;
+var initExtent, map, point, lat, lon, pointLayer,tr_non_layer, mp;
             var currentType = "point";
             var points = [];
             var lstLabel = [];
@@ -25,9 +25,10 @@ function initialize()
                                     }
                             );
     pointLayer = new nostra.maps.layers.GraphicsLayer(map, { id: "pointLayer", mouseOver: false });
+    tr_non_layer = new nostra.maps.layers.GraphicsLayer(map, { id: "tr_non_layer", mouseOver: false });
+    map.addLayer(tr_non_layer);
     map.addLayer(pointLayer);
     get_point();
-    
     map.events.zoom = function(evt)
     {
         var lavel = map.getLevel();
@@ -75,7 +76,28 @@ function initialize()
                                         var g = pointLayer.addMarker(lat, lon, pointMarker);
                                         
                                 }*/
-                                
+    document.getElementById("has_log").onclick = function () {
+                                                                var x = document.getElementById("has_log").checked;
+                                                                if(x == true)
+                                                                {
+                                                                    pointLayer.show();
+                                                                }
+                                                                else if(x == false)
+                                                                {
+                                                                    pointLayer.hide();
+                                                                }
+                                                            };
+    document.getElementById("no_log").onclick = function () {
+                                                                var x = document.getElementById("no_log").checked;
+                                                                if(x == true)
+                                                                {
+                                                                    tr_non_layer.show();
+                                                                }
+                                                                else if(x == false)
+                                                                {
+                                                                    tr_non_layer.hide();
+                                                                }
+                                                            };                          
 }
 
 function setLavelVisible(visible) 
@@ -84,11 +106,13 @@ function setLavelVisible(visible)
     if (visible) {
         for (var i = 0; i < lstLabel.length; i++) {
             pointLayer.showLabel(lstLabel[i]);
+            tr_non_layer.showLabel(lstLabel[i]);
         }
     
     } else {
         for (var i = 0; i < lstLabel.length; i++) {
             pointLayer.hideLabel(lstLabel[i]);
+            tr_non_layer.hideLabel(lstLabel[i]);
         }
     }
 }
@@ -168,32 +192,20 @@ function plt_point(obj)
                                                                 label: nostraLabel 
                                                             }
                                                         );
-        var g = pointLayer.addMarker(lat, lon, pointMarker);
-        
+        if(load == 0)
+        {
+            //var g = pointLayer.addMarker(lat, lon, pointMarker);
+            tr_non_layer.addMarker(lat, lon, pointMarker);
+        }
+        else if(load > 0)
+        {
+            pointLayer.addMarker(lat, lon, pointMarker);
+        }
         i++;
     }
 }
 
-function test()
-{
-    $("#test").html("test");
-    alert("test...");
-    console.log(pointLayer);
-    console.log(pointLayer.graphics[0].symbol.attributes.POI_NAME);
-}
 
-function test2()
-{
-    pointLayer.graphics[0].symbol.attributes.POI_NAME = "0000000";
-    console.log(pointLayer.graphics[0].symbol.attributes.POI_NAME);
-    var i =0;
-    while(pointLayer.graphics[i])
-    {
-        console.log(pointLayer.graphics[i].symbol.attributes.POI_NAME);
-        pointLayer.graphics[i].symbol.marker.url = './images/tr_danger.png';
-        i++;
-    }
-}
 
 function zm(lat,lon)
 {
