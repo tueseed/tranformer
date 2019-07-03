@@ -73,7 +73,7 @@
                 <img src="./images/tr_success.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" style="background-color: gray;">&nbsp;โหลดน้อยกว่า 60 %
               </div>
               <div class="mt-2">
-                <img src="./images/tr_non.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" style="background-color: gray;">&nbsp;ไม่มีข้อมูลวัดโหลด
+                <img src="./images/tr_non.PNG"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" style="background-color: gray;">&nbsp;ไม่มีข้อมูลวัดโหลด
               </div>
               <div class="mt-2">
                 <img src="./images/U.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" style="background-color: gray;">&nbsp;%Unbalance >20
