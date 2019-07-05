@@ -13,7 +13,7 @@
       </div>
       <div class="card-body">
         <div class="text-center" style="font-size:50px;">
-          <span class="font-weight-bold text-danger">3</span>
+          <span class="font-weight-bold text-danger" id="high_load">--</span>
         </div>
         <div class="float-right" style="font-size:14px;">
           <span class="font-weight-bold text-danger">เครื่อง</span>
@@ -29,7 +29,7 @@
       </div>
       <div class="card-body">
         <div class="text-center" style="font-size:50px;">
-          <span class="font-weight-bold text-warning">18</span>
+          <span class="font-weight-bold text-warning" id="med_load">--</span>
         </div>
         <div class="float-right" style="font-size:14px;">
           <span class="font-weight-bold text-warning">เครื่อง</span>
@@ -45,7 +45,7 @@
       </div>
       <div class="card-body">
         <div class="text-center" style="font-size:50px;">
-          <span class="font-weight-bold text-success">1,241</span>
+          <span class="font-weight-bold text-success" id="low_load">--</span>
         </div>
         <div class="float-right" style="font-size:14px;">
           <span class="font-weight-bold text-success">เครื่อง</span>
@@ -61,10 +61,10 @@
       </div>
       <div class="card-body">
         <div class="text-center" style="font-size:50px;">
-          <span class="font-weight-bold text-success">274</span>
+          <span class="font-weight-bold text-primary" id="unb_load">--</span>
         </div>
         <div class="float-right" style="font-size:14px;">
-          <span class="font-weight-bold text-success">เครื่อง</span>
+          <span class="font-weight-bold text-primary">เครื่อง</span>
         </div>
       </div>
     </div>

@@ -29,7 +29,7 @@
         <div class="container-fluid">
           <a class="navbar-brand font-weight-bold" href="#!">
             <img src="./assets/images/pea-logo.png" width="100" class="d-inline-block align-top" alt="">
-            <span style="color:#4385f5;">TRA</span><span style="color:#ea4235;">NS</span><span style="color:#fbbd0a;">FOR</span><span style="color:#4385f5;">ME</span><span style="color:#34a853;">R LO</span><span style="color:#ea4235;">AD</span>
+            <span style="color:#4385f5;">TRANS</span><span style="color:#ea4235;">FOR</span><span style="color:#fbbd0a;">MER</span><span style="color:#4385f5;"> L</span><span style="color:#34a853;">OA</span><span style="color:#ea4235;">D</span>
           </a>
           <span class="navbar-text">
             กฟอ.โพธาราม
@@ -47,7 +47,7 @@
                 <i class="fas fa-home"></i>
                 หน้าแรก
               </a>
-              <a class="nav-link <?=$action=='search'?'active':'' ?>" href="?action=search">
+              <a class="nav-link <?=$action=='manage'?'active':'' ?>" href="?action=manage">
                 <i class="fa fa-search" aria-hidden="true"></i>  
                 จัดการหม้อแปลง
               </a>
