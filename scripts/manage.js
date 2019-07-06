@@ -1,9 +1,9 @@
 function tr_format(value, row, index) {
-    return [
-      '<a class="btn btn-sm btn-outline-primary po-detail" href="#" title="Like" data-toggle="modal" onclick="tr_modal('+"'" + value + "'" +')" data-target="#cartModal">',
-      '<i class="fa fa-eye"></i> รายละเอียด..',
-      "</a>  "
-    ].join("");
+  return [
+    '<a class="btn btn-sm btn-outline-primary tr-detail" href="javascript:void(0)" title="Like">',
+    '<i class="fa fa-eye"></i> รายละเอียด',
+    "</a>  "
+  ].join("");
   }
   
   function textCenterFormatter(value, row, index) {
@@ -18,3 +18,10 @@ function tr_format(value, row, index) {
   {
     $("#pea_no").html(pea_no);
   }
+
+  window.tr_event = {
+    "click .tr-detail": function(e, value, row, index) {
+      // redirect to page for show ca detail
+      window.location.href = "?action=tr_detail_d&pea_no=" + value;
+    }
+  };
