@@ -54,7 +54,7 @@ function fetch_detail2(obj)
         $('#kva_phase').html(obj[0].kva + ' KVA - ' + obj[0].phase + ' Phase');
         $('#rate_amp').html(rate_amp.toFixed(0) + ' A.');
         $('#location').html(obj[0].location);
-        $('#map').attr('href','https://www.google.com/maps/place/'+obj[0].lat + ',' + obj[0].long)
+        $('#map').attr('href','https://www.google.com/maps/place/'+obj[0].lat + ',' + obj[0].lon)
         $('#edit_btn').hide();
         $('#add_btn').attr('href','?action=add_load&pea_no='+ obj[0 ].pea_no);
 

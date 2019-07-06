@@ -22,6 +22,6 @@ function tr_format(value, row, index) {
   window.tr_event = {
     "click .tr-detail": function(e, value, row, index) {
       // redirect to page for show ca detail
-      window.location.href = "?action=tr_detail_d&pea_no=" + value;
+      window.location.href = "?action=tr_detail_d&pea_no=" + row["pea_no_tr"];
     }
   };

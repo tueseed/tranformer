@@ -166,7 +166,7 @@ function plt_point(obj)
             var icon = "./images/tr_non.PNG";
         }
         lat = obj[i].lat;
-        lon = obj[i].long;
+        lon = obj[i].lon;
         var nostraCallout = new nostra.maps.Callout({ title: obj[i].pea_no_tr, content: "<b>สถานที่:</b> " + obj[i].location + "<br><b>เปอร์เซนต์โหลด:</b> " + load.toFixed(2) + "%<br><b>กระแส:</b><br>เฟส A: "+ obj[i].t_a +" A.<br>เฟส B: " + obj[i].t_b + " A.<br>เฟส C: " +obj[i].t_c+ " A.<br><b>เปอร์เซนต์ Unbalance :</b>" + unb_per.toFixed(2) + "%"});
         var nostraLabel = new nostra.maps.symbols.Label({
                                                             text:obj[i].pea_no_tr,

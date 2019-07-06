@@ -9,7 +9,7 @@
         // $latlon = $obj["lat"].",".$obj["long"];
         $latlon = array(
                         "lat"=>$obj["lat"],
-                        "lon"=>$obj["long"]
+                        "lon"=>$obj["lon"]
                     );
         array_push(
                     $data1,

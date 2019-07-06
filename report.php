@@ -44,5 +44,5 @@
 </div>
 
 <div class="row mt-1">
-    <button type="button" class="btn btn-primary mt-3" onclick="export_pdf()"><i class="fas fa-file-pdf" aria-hidden="true"></i>  Export</button>
+    <button type="button" class="btn btn-primary mt-3" onclick="export_pdf()"><i class="fas fa-file-pdf" aria-hidden="true"></i>  Export to pdf</button>
 </div>
