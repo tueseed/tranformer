@@ -85,7 +85,7 @@
               </thead>
             </table>
             </div>
-            <!-- modal -ของสินค้า -->
+            <!-- modal -รายละเอียดวัดโหลด -->
             <div class='modal fade' tabindex='-1' role='dialog' id='TrModal'>
                 <div class='modal-dialog modal-lg' role='document' >
                     <div class='modal-content'>
@@ -96,19 +96,206 @@
                             </button>
                         </div>
                         <div class='modal-body'>
-                            <div class="form-group">
-                                <label> วันที่วัดโหลด</label>
-                                <input class="form-control" type="text" id="date_log" name = "date_log" disabled>
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="form-group">
+                                  <label> วันที่วัดโหลด</label>
+                                  <input class="form-control" type="text" id="date_log" name = "date_log" disabled>
+                              </div>
                             </div>
-                            <div class="form-group">
-                                <label> ความต้องการเพิ่มเติม</label>
-                                <textarea class="form-control" rows="3" id="des" name = "des" disabled></textarea>
+                          </div>
+                          <h4 class="card-title font-weight-bold">
+                            <i class="fas fa-bolt"></i>  กระแส
+                          </h4>
+                          <div class="row">
+                            <div class="col-lg-3 offset-lg-2 text-center">
+                                <label>เฟส A</label>   
                             </div>
-                            <label>วันที่นัดหมาย</label>
-                            <input class="form-control text-center datepicker" 
-                                style="font-size:22px;"
-                                placeholder="เลือกวันนัดหมาย" 
-                                type="date" disabled name="date_input" id="app_date"/>
+                            <div class="col-lg-3 text-center">
+                                <label>เฟส B</label>   
+                            </div>
+                            <div class="col-lg-3 text-center">
+                                <label>เฟส C</label>   
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-2 text-center my-auto">
+                                    <label>วงจรที่ 1</label>   
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c1a" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c1b" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c1c" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-2 text-center my-auto">
+                                    <label>วงจรที่ 2</label>   
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c2a" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c2b" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c2c" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-2 text-center my-auto">
+                                    <label>วงจรที่ 3</label>   
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c3a" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c3b" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c3c" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-2 text-center my-auto">
+                                    <label>วงจรที่ 4</label>   
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c4a" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c4b" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="c4c" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                          </div>
+
+                          <h4 class="card-title font-weight-bold">
+                            <i class="fas fa-bolt"></i>  แรงดัน
+                          </h4>
+                          <div class="row">
+                            <div class="col-lg-3 offset-lg-2 text-center">
+                                <label>เฟส A</label>   
+                            </div>
+                            <div class="col-lg-3 text-center">
+                                <label>เฟส B</label>   
+                            </div>
+                            <div class="col-lg-3 text-center">
+                                <label>เฟส C</label>   
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-2 text-center my-auto">
+                                    <label>วงจรที่ 1</label>   
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-2 text-center my-auto">
+                                    <label>วงจรที่ 2</label>   
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-2 text-center my-auto">
+                                    <label>วงจรที่ 3</label>   
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-2 text-center my-auto">
+                                    <label>วงจรที่ 4</label>   
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                              </div>
+                            </div>
+                          </div>
+                          
+                           
+                          
                         </div>
                         <div class='modal-footer'>
                             <button type='button' class='btn btn-primary'  href="#" id="edit" onclick="edit()" value="edit">แก้ไข</button>
@@ -118,7 +305,7 @@
                     </div>
                 </div>
             </div>
-            <!-- จบ MOdal ของสินค้า -->
+            <!-- จบ MOdal รายละเอียดวัดโหลด -->
           </div>
         </div>
   </div>

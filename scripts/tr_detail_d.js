@@ -181,16 +181,35 @@ function tr_format(value, row, index) {
                         //console.log(response);
                         var obj = JSON.parse(response) || {};
                         console.log(obj);
-                        // $('#cate_name').val(obj[0].cate_name);
-                        // $('#des').val(obj[0].des);
-                        // $('#app_date').val(obj[0].appointment_date);
-                        // $('#des').prop( "disabled", true );
-                        // $('#app_date').prop( "disabled", true );
+                        fetch_load_log(obj);
                     
                     },
             complete :function(){
                     $('div.modal-dialog').unblock();
                         }					
             });
+    }
+
+    function fetch_load_log(obj)
+    {
+        $("#date_log").val(obj[0].date_log);
+
+        $("#c1a").val(obj[0].c1a);
+        $("#c1b").val(obj[0].c1b);
+        $("#c1c").val(obj[0].c1c);
+
+        $("#c2a").val(obj[0].c2a);
+        $("#c2b").val(obj[0].c2b);
+        $("#c2c").val(obj[0].c2c);
+
+        $("#c3a").val(obj[0].c3a);
+        $("#c3b").val(obj[0].c3b);
+        $("#c3c").val(obj[0].c3c);
+
+        $("#c4a").val(obj[0].c4a);
+        $("#c4b").val(obj[0].c4b);
+        $("#c4c").val(obj[0].c4c);
+
+        
     }
       
