@@ -219,17 +219,17 @@
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v1a" name = "load_log_input" disabled>
                               </div>
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v1b" name = "load_log_input" disabled>
                               </div>
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v1c" name = "load_log_input" disabled>
                               </div>
                             </div>
                           </div>
@@ -239,17 +239,17 @@
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v2a" name = "load_log_input" disabled>
                               </div>
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v2b" name = "load_log_input" disabled>
                               </div>
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v2c" name = "load_log_input" disabled>
                               </div>
                             </div>
                           </div>
@@ -259,17 +259,17 @@
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v3a" name = "load_log_input" disabled>
                               </div>
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v3b" name = "load_log_input" disabled>
                               </div>
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v3c" name = "load_log_input" disabled>
                               </div>
                             </div>
                           </div>
@@ -279,17 +279,17 @@
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v4a" name = "load_log_input" disabled>
                               </div>
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v4b" name = "load_log_input" disabled>
                               </div>
                             </div>
                             <div class="col-lg-3">
                               <div class="form-group">
-                                  <input class="form-control" type="text" id="date_log" name = "load_log_input" disabled>
+                                  <input class="form-control" type="text" id="v4c" name = "load_log_input" disabled>
                               </div>
                             </div>
                           </div>
@@ -298,7 +298,7 @@
                           
                         </div>
                         <div class='modal-footer'>
-                            <button type='button' class='btn btn-primary'  href="#" id="edit" onclick="edit()" value="edit">แก้ไข</button>
+                            <button type='button' class='btn btn-primary'  href="#" id="btn_edit_Load_log" onclick="check_mode_edit_load_log()" value="edit">แก้ไข</button>
                             <button type='button' class='btn btn-primary'  href="#" id="del" onclick="del()">ลบ</button>
                             <button type='button' class='btn btn-primary' data-dismiss='modal' >ปิด</button>
                         </div>
