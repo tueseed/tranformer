@@ -28,3 +28,72 @@ else if(cri_cmd == "u")
 {
     $("#head_cri").html("หม้อแปลง % Unbalance >20");
 }
+
+$("#TrModal").on('shown.bs.modal', function(){
+    plt_graph();
+   });
+
+function tr_modal(pea_no)
+   {
+     $("#pea_no").html(pea_no);
+   }
+
+
+function plt_graph()
+{
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+                                    type: 'line',
+                                    data: {
+                                            labels: ['2556','2557','2558', '2559', '2560', '2561'],
+                                            datasets: [
+                                                        {
+                                                            label: 'เฟส A',
+                                                            data: [
+                                                                Math.floor((Math.random() * 5) + 1),
+                                                                Math.floor((Math.random() * 10) + 1),
+                                                                Math.floor((Math.random() * 20) + 1),
+                                                                Math.floor((Math.random() * 40) + 1),
+                                                                Math.floor((Math.random() * 80) + 1),
+                                                                Math.floor((Math.random() * 160) + 1)
+                                                              ],
+                                                            backgroundColor: "brown",
+                                                            borderColor: "brown",
+                                                            fill: false,
+                                                            borderWidth: 0
+                                                        },
+                                                        {
+                                                            label: 'เฟส B',
+                                                            data: [
+                                                                Math.floor((Math.random() * 5) + 1),
+                                                                Math.floor((Math.random() * 10) + 1),
+                                                                Math.floor((Math.random() * 20) + 1),
+                                                                Math.floor((Math.random() * 40) + 1),
+                                                                Math.floor((Math.random() * 80) + 1),
+                                                                Math.floor((Math.random() * 160) + 1)
+                                                              ],
+                                                            backgroundColor: "black",
+                                                            borderColor: "black",
+                                                            fill: false,
+                                                            borderWidth: 0
+                                                        },
+                                                        {
+                                                            label: 'เฟส C',
+                                                            data: [
+                                                                Math.floor((Math.random() * 5) + 1),
+                                                                Math.floor((Math.random() * 10) + 1),
+                                                                Math.floor((Math.random() * 20) + 1),
+                                                                Math.floor((Math.random() * 40) + 1),
+                                                                Math.floor((Math.random() * 80) + 1),
+                                                                Math.floor((Math.random() * 160) + 1)
+                                                              ],
+                                                            backgroundColor: "gray",
+                                                            borderColor: "gray",
+                                                            fill: false,
+                                                            borderWidth: 3
+                                                        }
+
+                                                    ]
+                                            }
+                                    });
+}

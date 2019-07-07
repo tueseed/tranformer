@@ -16,9 +16,29 @@
         <th data-field="pea_no" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-bolt"></i> Pea No.</th>
         <th data-field="phase" data-sortable="true"><i class="fas fa-bolt"></i> Phase</th>
         <th data-field="kva" data-sortable="true"><i class="fas fa-bolt"></i> Kva</th>
-        <th data-formatter="tr_format" >รายละเอียด</th>
+        <th data-formatter="tr_format" data-field="pea_no" >สถิติ</th>
         </tr>
       </thead>
     </table>
   </div>
+  <!-- modal -รายละเอียดวัดโหลด -->
+  <div class='modal fade' tabindex='-1' role='dialog' id='TrModal'>
+                <div class='modal-dialog modal-lg' role='document' >
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h5 class='modal-title font-weight-bold' id="head_modal"><i class="fas fa-bolt"></i> สถิติการวัดโหลด Pea NO. <span id="pea_no"></span></h5>
+                            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </div>
+                        <div class='modal-body'>
+                          <div class="row">
+                            <canvas id="myChart" style="height:40vh; width:70vw"></canvas>
+                          </div> 
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- จบ MOdal รายละเอียดวัดโหลด -->
 </div>
