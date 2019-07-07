@@ -140,15 +140,15 @@ function get_point()
 
 function plt_point(obj)
 {
-    console.log("plt_point..");
+    console.log(obj);
     var i=0;
-    while(obj[i])
+    while(obj.load[i])
     {
-        var rate_amp = ((obj[i].kva * 1000)/(1.732 * 400))*3;
-        var total_amp = parseInt(obj[i].t_a) + parseInt(obj[i].t_b) + parseInt(obj[i].t_c);
+        var rate_amp = ((obj.load[i].kva * 1000)/(1.732 * 400))*3;
+        var total_amp = parseInt(obj.load[i].t_a) + parseInt(obj.load[i].t_b) + parseInt(obj.load[i].t_c);
         var avg_amp = total_amp/3
         var load = (total_amp/rate_amp)*100;
-        var unb_per = ((obj[i].max_amp-avg_amp)*100)/avg_amp;
+        var unb_per = ((obj.load[i].max_amp-avg_amp)*100)/avg_amp;
         if(load > 80)
         {
             if(unb_per > 20){ var icon = "./images/tr_danger_u.png";}else{var icon = "./images/tr_danger.png";}
@@ -165,11 +165,11 @@ function plt_point(obj)
         {
             var icon = "./images/tr_non.PNG";
         }
-        lat = obj[i].lat;
-        lon = obj[i].lon;
-        var nostraCallout = new nostra.maps.Callout({ title: obj[i].pea_no_tr, content: "<b>สถานที่:</b> " + obj[i].location + "<br><b>เปอร์เซนต์โหลด:</b> " + load.toFixed(2) + "%<br><b>กระแส:</b><br>เฟส A: "+ obj[i].t_a +" A.<br>เฟส B: " + obj[i].t_b + " A.<br>เฟส C: " +obj[i].t_c+ " A.<br><b>เปอร์เซนต์ Unbalance :</b>" + unb_per.toFixed(2) + "%"});
+        lat = obj.load[i].lat;
+        lon = obj.load[i].lon;
+        var nostraCallout = new nostra.maps.Callout({ title: obj.load[i].pea_no, content: "<b>สถานที่:</b> " + obj.load[i].location + "<br><b>เปอร์เซนต์โหลด:</b> " + load.toFixed(2) + "%<br><b>กระแส:</b><br>เฟส A: "+ obj.load[i].t_a +" A.<br>เฟส B: " + obj.load[i].t_b + " A.<br>เฟส C: " +obj.load[i].t_c+ " A.<br><b>เปอร์เซนต์ Unbalance :</b>" + unb_per.toFixed(2) + "%"});
         var nostraLabel = new nostra.maps.symbols.Label({
-                                                            text:obj[i].pea_no_tr,
+                                                            text:obj.load[i].pea_no,
                                                             size: "8",
                                                             position: "Top",
                                                             color: "#353535",
@@ -185,23 +185,49 @@ function plt_point(obj)
                                                                 width: 40,
                                                                 height: 40, 
                                                                 attributes: { 
-                                                                                POI_NAME: obj[i].pea_no_tr,
+                                                                                POI_NAME: obj.load[i].pea_no,
                                                                                 POI_ROAD: "TestAttr" 
                                                                             },
                                                                 callout: nostraCallout,
                                                                 label: nostraLabel 
                                                             }
                                                         );
-        if(load == 0)
-        {
-            //var g = pointLayer.addMarker(lat, lon, pointMarker);
-            tr_non_layer.addMarker(lat, lon, pointMarker);
-        }
-        else if(load > 0)
-        {
             pointLayer.addMarker(lat, lon, pointMarker);
-        }
-        i++;
+            i++;
+       
+    }
+    var j=0;
+    while(obj.not_load[j])
+    {
+        lat = obj.not_load[j].lat;
+        lon = obj.not_load[j].lon;
+        var nostraCallout = new nostra.maps.Callout({ title: obj.not_load[i].tr_non, content: "<b>สถานที่:</b> " + obj.not_load[i].location + "<br><b>เปอร์เซนต์โหลด:</b>   --%<br><b>กระแส:</b><br>เฟส A: -- A.<br>เฟส B: -- A.<br>เฟส C: -- A.<br><b>เปอร์เซนต์ Unbalance :</b>--%"});
+        var nostraLabel = new nostra.maps.symbols.Label({
+                                                            text:obj.not_load[i].tr_non,
+                                                            size: "8",
+                                                            position: "Top",
+                                                            color: "#353535",
+                                                            haloColor: "#ffffff".value,
+                                                            haloSize: "1",
+                                                            xoffset: "0",
+                                                            yoffset: "0"
+                                                        });
+        lstLabel.push(nostraLabel);
+        var pointMarker = new nostra.maps.symbols.Marker(
+                                                            { 
+                                                                url: "./images/tr_non.PNG", 
+                                                                width: 40,
+                                                                height: 40, 
+                                                                attributes: { 
+                                                                                POI_NAME: obj.not_load[i].tr_non,
+                                                                                POI_ROAD: "TestAttr" 
+                                                                            },
+                                                                callout: nostraCallout,
+                                                                label: nostraLabel 
+                                                            }
+                                                        );
+            tr_non_layer.addMarker(lat, lon, pointMarker);
+            j++;
     }
 }
 
