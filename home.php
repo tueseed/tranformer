@@ -1,12 +1,13 @@
-<div class="row">
+<!-- <div class="row">
   <h6 class="p-3 font-weight-bold pt-3 rounded-pill bg-primary text-white">
     <i class="fas fa-table"></i> ข้อมูลหม้อแปลง
   </h6>
-</div>
+</div> -->
 <!-- <div class="dropdown-divider"></div> -->
 
 <div class="row">
-  <div class="col-sm-12 col-md-6 col-lg-4">
+  
+  <a class="col-sm-12 col-md-6 col-lg-4 nav-link" href="?action=critical_tr&cri_cmd=h">
     <div class="card mt-2">
       <div class="card-header">
       <img src="./images/tr_danger.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30"> &nbsp;โหลดเกิน 80 %
@@ -20,9 +21,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="col-sm-12 col-md-6 col-lg-4">
+  <a class="col-sm-12 col-md-6 col-lg-4 nav-link" href="?action=critical_tr&cri_cmd=m">
     <div class="card mt-2">
       <div class="card-header">
       <img src="./images/tr_warning.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" >&nbsp;โหลด 60-80 %
@@ -36,9 +37,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="col-sm-12 col-md-6 col-lg-4">
+  <a class="col-sm-12 col-md-6 col-lg-4 nav-link" href="?action=critical_tr&cri_cmd=l">
     <div class="card mt-2">
       <div class="card-header">
       <img src="./images/tr_success.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30"ห>&nbsp;โหลดน้อยกว่า 60 %
@@ -52,9 +53,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="col-sm-12 col-md-6 col-lg-4">
+  <a class="col-sm-12 col-md-6 col-lg-4 nav-link" href="?action=critical_tr&cri_cmd=u">
     <div class="card mt-2">
       <div class="card-header">
       <img src="./images/U.png"  class="rounded-circle" alt="Cinque Terre" width="30" height="30" >&nbsp;%Unbalance >20
@@ -68,7 +69,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </a>
 
 </div>
 
