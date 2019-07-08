@@ -50,9 +50,9 @@ function plt_graph()
                                                         {
                                                             label: 'เฟส A',
                                                             data: [
-                                                                Math.floor((Math.random() * 5) + 1),
-                                                                Math.floor((Math.random() * 10) + 1),
                                                                 Math.floor((Math.random() * 20) + 1),
+                                                                Math.floor((Math.random() * 20) + 1),
+                                                                Math.floor((Math.random() * 40) + 1),
                                                                 Math.floor((Math.random() * 40) + 1),
                                                                 Math.floor((Math.random() * 80) + 1),
                                                                 Math.floor((Math.random() * 160) + 1)
@@ -65,9 +65,9 @@ function plt_graph()
                                                         {
                                                             label: 'เฟส B',
                                                             data: [
-                                                                Math.floor((Math.random() * 5) + 1),
-                                                                Math.floor((Math.random() * 10) + 1),
                                                                 Math.floor((Math.random() * 20) + 1),
+                                                                Math.floor((Math.random() * 20) + 1),
+                                                                Math.floor((Math.random() * 40) + 1),
                                                                 Math.floor((Math.random() * 40) + 1),
                                                                 Math.floor((Math.random() * 80) + 1),
                                                                 Math.floor((Math.random() * 160) + 1)
@@ -80,9 +80,9 @@ function plt_graph()
                                                         {
                                                             label: 'เฟส C',
                                                             data: [
-                                                                Math.floor((Math.random() * 5) + 1),
-                                                                Math.floor((Math.random() * 10) + 1),
                                                                 Math.floor((Math.random() * 20) + 1),
+                                                                Math.floor((Math.random() * 20) + 1),
+                                                                Math.floor((Math.random() * 40) + 1),
                                                                 Math.floor((Math.random() * 40) + 1),
                                                                 Math.floor((Math.random() * 80) + 1),
                                                                 Math.floor((Math.random() * 160) + 1)
