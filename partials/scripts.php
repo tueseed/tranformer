@@ -17,8 +17,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.th.min.js"></script>
 <script src="./assets/js/jquery.blockUI.js"></script>
 <script type="text/javascript" src="//api.nostramap.com/nostraapi/v2.0?key=G1qcnsy)nXzQqqEmi3Bd65aW8wxena7JcjVbuP6jhXfMEvXWB9hLJBrvLGaPMxmeDjRvCq)cKhsR699zlbQPLpW=====2"></script>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+
+<!-- <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 <script>
   var config = {
     apiKey: 'AIzaSyCvnyqJxQ_oEZmESo7JFvYA5OnVLtZIHzE',
@@ -27,7 +28,38 @@
     projectId: 'shake-battle',
 };
 firebase.initializeApp(config); 
+</script> -->
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  var config = {
+    apiKey: 'AIzaSyBtYgzAt2rNS9C5njV4lwhfxJGprBxC_3w',
+    authDomain: 'tranformer-8af35.firebaseapp.com',
+    databaseURL: 'https://tranformer-8af35.firebaseio.com',
+    projectId: 'tranformer-8af35',
+};
+firebase.initializeApp(config); 
 </script>
+
+<!-- <script src="/__/firebase/6.3.1/firebase-app.js"></script>
+
+
+<script src="/__/firebase/init.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBtYgzAt2rNS9C5njV4lwhfxJGprBxC_3w",
+  authDomain: "tranformer-8af35.firebaseapp.com",
+  databaseURL: "https://tranformer-8af35.firebaseio.com",
+  projectId: "tranformer-8af35",
+  storageBucket: "tranformer-8af35.appspot.com",
+  messagingSenderId: "484690826094",
+  appId: "1:484690826094:web:a648929f1392b32f"
+};
+firebase.initializeApp(config); 
+</script> -->
+
+
+
 
 
 

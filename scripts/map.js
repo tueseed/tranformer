@@ -276,7 +276,7 @@ function zm(lat,lon)
 
 
 
-var room = firebase.database().ref('tr_load_log');
+var room = firebase.database().ref('45-898989');
 room.on('value',function(snapshot){
                                     console.log(snapshot.val());
                                   }
