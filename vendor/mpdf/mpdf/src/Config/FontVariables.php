@@ -93,19 +93,11 @@ class FontVariables
 			 */
 
 			'fontdata' => [
-				/* PrintForU */
-				"printable4u" => [
-					'R' => "PrintAble4U Regular.ttf",
-					'B' => "PrintAble4U Bold.ttf",
-					'I' => "PrintAble4U Italic.ttf",
-					'BI' => "PrintAble4U Bold Italic.ttf",
-				],
-				/* Sarabun fonts */
 				"sarabun" => [
 					'R' => "THSarabunNew.ttf",
 					'B' => "THSarabunNew Bold.ttf",
 					'I' => "THSarabunNew Italic.ttf",
-					"BI" => "THSarabunNew BoldItalic.ttf"
+					'BI' => "THSarabunNew BoldItalic.ttf"
 				],
 				"dejavusanscondensed" => [
 					'R' => "DejaVuSansCondensed.ttf",

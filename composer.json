@@ -1,7 +1,7 @@
 {
+    "name" : "Nutthapong",
+    "description": "transformer",
     "require": {
-    
-        "ext-mbstring": "*"
-
+        "mpdf/mpdf": "^8.0"
     }
 }

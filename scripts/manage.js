@@ -25,3 +25,11 @@ function tr_format(value, row, index) {
       window.location.href = "?action=tr_detail_d&pea_no=" + row["pea_no_tr"];
     }
   };
+
+
+  ////////////////////////////////FIREBASE///////////////////////////////////////////
+var room = firebase.database().ref('45-898989');
+room.on('value',function(snapshot){
+                                    console.log(snapshot.val());
+                                  }
+                                    );
