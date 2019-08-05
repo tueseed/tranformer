@@ -16,6 +16,7 @@
         <th data-field="phase" data-sortable="true"><i class="fas fa-bolt"></i> Phase</th>
         <th data-field="kva" data-sortable="true"><i class="fas fa-bolt"></i> Kva</th>
         <th data-formatter="tr_format" data-events="tr_event">รายละเอียด</th>
+        <!-- <th data-formatter="tr_graph" >โหลดปัจจุบัน</th> -->
         </tr>
       </thead>
     </table>

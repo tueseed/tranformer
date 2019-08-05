@@ -15,6 +15,11 @@
   $password = 'ef6bc121';
   $db = 'heroku_750bf9de350a63c';
 
+  // $server = 'localhost';
+  // $username = 'root';
+  // $password = '';
+  // $db = 'tr-load';
+
   $conn = new mysqli($server, $username, $password, $db);
 
 	// $conn = mysqli_connect($serverName, $userName, $userPassword, $dbName, $db_port) or die('Unable to establish a CRM_BU connection');

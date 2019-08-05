@@ -71,7 +71,7 @@ function fetch_detail2(obj)
         $('#avg_amp').html(avg_amp.toFixed(2) + ' A.');
         $('#unbalance').html(unb_per.toFixed(2) + ' %');
         $('#location').html(obj[0].location);
-        $('#map').attr('href','https://www.google.com/maps/place/'+obj[0].lat + ',' + obj[0].long)
+        $('#map').attr('href','https://www.google.com/maps/place/'+obj[0].lat + ',' + obj[0].lon)
 
         var load = (total_amp/rate_amp)*100;
         var cls = '';

@@ -5,6 +5,14 @@ function tr_format(value, row, index) {
     "</a>  "
   ].join("");
   }
+
+  function tr_graph(value, row, index) {
+    return [
+      '<a class="btn btn-sm btn-outline-primary tr-detail" href="javascript:void(0)" title="Like">',
+      '<i class="fa fa-eye"></i> กราฟ',
+      "</a>  "
+    ].join("");
+    }
   
   function textCenterFormatter(value, row, index) {
     return "<div class='text-center'>" + value + "</div>";
